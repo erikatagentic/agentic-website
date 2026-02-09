@@ -20,7 +20,7 @@ const instrumentSerif = Instrument_Serif({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://agentic.com"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://heyagentic.ai"
   ),
   title: {
     default: "Agentic — AI Workflow Automation",

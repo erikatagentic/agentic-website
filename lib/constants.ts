@@ -15,7 +15,7 @@ export const SITE_CONFIG = {
   tagline: "AI Workflow Automation",
   description:
     "We build custom AI automation pipelines that eliminate manual work and deploy in days. n8n workflows, LLM integrations, and process intelligence for operations teams.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://agentic.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://heyagentic.ai",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK || "https://cal.com/agentic/demo",
 } as const;
 
