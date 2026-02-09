@@ -1,51 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useHeroVisibility } from "@/hooks/use-hero-visibility";
 
 export function MobileStickyCTA() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const hero = document.getElementById("hero");
-    const footer = document.querySelector("footer");
-    if (!hero) return;
-
-    let heroVisible = true;
-    let footerVisible = false;
-
-    const update = () => {
-      setVisible(!heroVisible && !footerVisible);
-    };
-
-    const heroObserver = new IntersectionObserver(
-      ([entry]) => {
-        heroVisible = entry.isIntersecting;
-        update();
-      },
-      { threshold: 0 }
-    );
-    heroObserver.observe(hero);
-
-    let footerObserver: IntersectionObserver | undefined;
-    if (footer) {
-      footerObserver = new IntersectionObserver(
-        ([entry]) => {
-          footerVisible = entry.isIntersecting;
-          update();
-        },
-        { threshold: 0 }
-      );
-      footerObserver.observe(footer);
-    }
-
-    return () => {
-      heroObserver.disconnect();
-      footerObserver?.disconnect();
-    };
-  }, []);
+  const { heroVisible, footerVisible } = useHeroVisibility();
+  const visible = !heroVisible && !footerVisible;
 
   return (
     <div

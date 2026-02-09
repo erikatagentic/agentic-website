@@ -1,9 +1,10 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { BackToTop } from "@/components/layout/back-to-top";
+import { HeroVisibilityProvider } from "@/hooks/use-hero-visibility";
 
 import "./globals.css";
 
@@ -20,6 +21,12 @@ const instrumentSerif = Instrument_Serif({
   variable: "--font-display-serif",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#09090B",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -80,11 +87,13 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <ScrollProgress />
-        <Navbar />
-        {children}
-        <Footer />
-        <BackToTop />
+        <HeroVisibilityProvider>
+          <ScrollProgress />
+          <Navbar />
+          {children}
+          <Footer />
+          <BackToTop />
+        </HeroVisibilityProvider>
       </body>
     </html>
   );

@@ -8,6 +8,18 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// ── Brand Colors (used in OG images and non-CSS contexts) ──
+// Keep in sync with globals.css design tokens
+
+export const BRAND_COLORS = {
+  background: "#09090B",
+  backgroundAlt: "#18181B",
+  primaryText: "#A78BFA",
+  foreground: "#FAFAFA",
+  foregroundMuted: "#A1A1AA",
+  primaryGlow: "rgba(124,58,237,0.3)",
+} as const;
+
 // ── Site Config ──
 
 export const SITE_CONFIG = {

@@ -44,11 +44,12 @@ export default function TermsPage() {
               2. Description of Services
             </h2>
             <p>
-              {SITE_CONFIG.name} provides AI workflow automation consulting
-              services, including but not limited to: workflow design and
-              deployment, custom AI integrations, process intelligence audits,
-              and ongoing optimization. The specific scope of services is defined
-              in individual client agreements.
+              {SITE_CONFIG.name} provides Clay-powered GTM automation and
+              signals-based outbound consulting services, including but not
+              limited to: buying-signal detection and workflow design, data
+              enrichment and lead scoring, outbound campaign deployment, CRM
+              integrations, and ongoing pipeline optimization. The specific scope
+              of services is defined in individual client agreements.
             </p>
           </section>
 
