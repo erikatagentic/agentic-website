@@ -23,7 +23,7 @@ export function ProblemSection() {
                 <AnimatedIconBox>
                   <IconBox icon={point.icon} variant="primary" />
                 </AnimatedIconBox>
-                <h3 className="mt-4 text-xl font-semibold leading-snug md:min-h-[3.5rem]">
+                <h3 className="mt-4 text-xl font-semibold leading-snug">
                   {point.title}
                 </h3>
                 <p className="mt-2 flex-1 text-base leading-relaxed text-foreground-muted">

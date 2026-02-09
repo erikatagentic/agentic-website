@@ -24,7 +24,7 @@ export function ServicesSection() {
                 <AnimatedIconBox>
                   <IconBox icon={service.icon} variant="primary" size="lg" />
                 </AnimatedIconBox>
-                <h3 className="mt-4 text-xl font-semibold leading-snug md:min-h-[4.25rem] md:text-2xl">
+                <h3 className="mt-4 text-xl font-semibold leading-snug md:text-2xl">
                   {service.title}
                 </h3>
                 <p className="mt-2 flex-1 text-base leading-relaxed text-foreground-muted">

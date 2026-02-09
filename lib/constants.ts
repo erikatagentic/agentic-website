@@ -69,19 +69,19 @@ export interface PainPoint {
 export const PAIN_POINTS: PainPoint[] = [
   {
     icon: Target,
-    title: "Your outbound is spray-and-pray",
+    title: "Spray-and-pray outbound",
     description:
       "You blast the same generic sequence to thousands of prospects. Reply rates sit below 1%, and your team burns hours on leads who were never going to buy.",
   },
   {
     icon: Radio,
-    title: "You're missing buying signals",
+    title: "Missed buying signals",
     description:
       "Prospects raise funding, switch jobs, and adopt new tools every day. By the time your team notices, a competitor already booked the meeting.",
   },
   {
     icon: TrendingUp,
-    title: "You can't scale without sacrificing quality",
+    title: "Scale kills quality",
     description:
       "Personalized outreach works, but it takes 15 minutes per prospect. Your SDRs choose between volume and relevance. They shouldn't have to.",
   },
