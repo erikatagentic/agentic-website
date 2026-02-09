@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { easeOutQuad } from "@/lib/motion";
+import { easeOutQuadMutable } from "@/lib/motion";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 interface HoverCardProps {
@@ -22,7 +22,7 @@ export function HoverCard({ children, className }: HoverCardProps) {
       className={cn(className)}
       whileHover={{
         scale: 1.02,
-        transition: { duration: 0.3, ease: [...easeOutQuad] as [number, number, number, number] },
+        transition: { duration: 0.3, ease: easeOutQuadMutable },
       }}
     >
       {children}

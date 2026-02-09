@@ -1,6 +1,9 @@
 // Canonical easing from CLAUDE.md Section 3.5
 export const easeOutQuad = [0.25, 0.46, 0.45, 0.94] as const;
 
+// Pre-cast mutable copy for Framer Motion's ease prop (avoids repeated `[...easeOutQuad] as [number, number, number, number]`)
+export const easeOutQuadMutable: [number, number, number, number] = [...easeOutQuad];
+
 export const fadeInUp = {
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },

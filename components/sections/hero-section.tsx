@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CTAButton } from "@/components/shared/cta-button";
 import { GradientBlob } from "@/components/shared/gradient-blob";
 import { SignalFlow } from "@/components/shared/signal-flow";
-import { easeOutQuad } from "@/lib/motion";
+import { easeOutQuadMutable } from "@/lib/motion";
 import { HERO, SITE_CONFIG } from "@/lib/constants";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
@@ -23,7 +23,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.5, ease: [...easeOutQuad] as [number, number, number, number] },
+    transition: { duration: 0.5, ease: easeOutQuadMutable },
   },
 };
 

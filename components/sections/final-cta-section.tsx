@@ -7,6 +7,7 @@ export function FinalCTASection() {
   return (
     <section
       id="cta"
+      aria-labelledby="cta-heading"
       className="relative overflow-hidden py-24 md:py-32"
     >
       {/* Gradient background */}
@@ -24,7 +25,7 @@ export function FinalCTASection() {
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <MotionWrapper className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
+          <h2 id="cta-heading" className="font-display text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
             {FINAL_CTA.headline}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-foreground-muted md:text-xl">

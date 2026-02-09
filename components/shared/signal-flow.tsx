@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Radio, Database, Mail, CalendarCheck } from "lucide-react";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
-import { easeOutQuad } from "@/lib/motion";
+import { easeOutQuadMutable } from "@/lib/motion";
 
 const steps = [
   { icon: Radio, label: "Signal Detected" },
@@ -25,7 +25,7 @@ export function SignalFlow() {
         transition: {
           duration: 0.6,
           delay: 0.8,
-          ease: [...easeOutQuad] as [number, number, number, number],
+          ease: easeOutQuadMutable,
         },
       })}
       className="mx-auto mt-16 max-w-3xl"
@@ -46,7 +46,7 @@ export function SignalFlow() {
                   transition: {
                     duration: 0.4,
                     delay: 1.0 + i * 0.15,
-                    ease: [...easeOutQuad] as [number, number, number, number],
+                    ease: easeOutQuadMutable,
                   },
                 })}
                 className="relative flex flex-col items-center gap-2"
