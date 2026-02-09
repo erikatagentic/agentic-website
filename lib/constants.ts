@@ -29,6 +29,7 @@ export const SITE_CONFIG = {
     "We build signals-based outbound systems on Clay that detect buying intent, enrich prospects, and generate qualified pipeline. Campaigns live in days, not weeks.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://heyagentic.ai",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK || "https://cal.com/agentic/demo",
+  linkedIn: "https://www.linkedin.com/company/heyagentic",
 } as const;
 
 // ── Navigation ──

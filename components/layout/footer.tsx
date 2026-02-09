@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Linkedin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { LogoIcon } from "@/components/shared/logo-icon";
@@ -21,6 +22,16 @@ export function Footer() {
             <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
               {SITE_CONFIG.description}
             </p>
+            <a
+              href={SITE_CONFIG.linkedIn}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
+              aria-label="Agentic on LinkedIn"
+            >
+              <Linkedin className="h-4 w-4" />
+              <span>LinkedIn</span>
+            </a>
           </div>
 
           {/* Links */}
