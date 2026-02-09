@@ -52,6 +52,11 @@ export const metadata: Metadata = {
       "Automate your business workflows with AI. Custom pipelines deployed in days.",
   },
   robots: { index: true, follow: true },
+  icons: {
+    icon: [
+      { url: "/logo.svg", type: "image/svg+xml" },
+    ],
+  },
 };
 
 export default function RootLayout({

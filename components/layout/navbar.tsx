@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { LogoIcon } from "@/components/shared/logo-icon";
 import { cn } from "@/lib/utils";
 import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 
@@ -64,8 +65,9 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="font-display text-xl font-normal italic tracking-tight"
+          className="flex items-center gap-2 font-display text-xl font-normal italic tracking-tight"
         >
+          <LogoIcon size={28} className="text-primary" />
           Agentic
           <span className="text-primary-text">.</span>
         </Link>

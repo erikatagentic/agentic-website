@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import { LogoIcon } from "@/components/shared/logo-icon";
 import { SITE_CONFIG, NAV_ITEMS } from "@/lib/constants";
 
 export function Footer() {
@@ -12,8 +13,9 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="font-display text-xl font-normal italic tracking-tight"
+              className="flex items-center gap-2 font-display text-xl font-normal italic tracking-tight"
             >
+              <LogoIcon size={28} className="text-primary" />
               Agentic
               <span className="text-primary-text">.</span>
             </Link>
