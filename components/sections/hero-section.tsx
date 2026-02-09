@@ -1,6 +1,6 @@
-import { HERO, SITE_CONFIG } from "@/lib/constants";
 import { CTAButton } from "@/components/shared/cta-button";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { HERO, SITE_CONFIG } from "@/lib/constants";
 
 export function HeroSection() {
   return (

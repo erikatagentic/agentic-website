@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { USE_CASES } from "@/lib/constants";
+import { Badge } from "@/components/ui/badge";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
-import { Badge } from "@/components/ui/badge";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
 import { cn } from "@/lib/utils";
+import { USE_CASES } from "@/lib/constants";
 
 export function UseCasesSection() {
   const [activeTab, setActiveTab] = useState(0);
@@ -15,6 +15,7 @@ export function UseCasesSection() {
   return (
     <SectionWrapper id="use-cases">
       <SectionHeading
+        id="use-cases-heading"
         overline="Use Cases"
         title="Built for your stack."
         subtitle="AI workflows tailored to every department."

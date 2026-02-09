@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { SITE_CONFIG, NAV_ITEMS } from "@/lib/constants";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
+import { SITE_CONFIG, NAV_ITEMS } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -61,18 +61,18 @@ export function Footer() {
             reserved.
           </p>
           <div className="flex gap-6">
-            <Link
-              href="/privacy"
+            <a
+              href="#"
               className="text-sm text-foreground-subtle transition-colors hover:text-foreground-muted"
             >
               Privacy Policy
-            </Link>
-            <Link
-              href="/terms"
+            </a>
+            <a
+              href="#"
               className="text-sm text-foreground-subtle transition-colors hover:text-foreground-muted"
             >
               Terms
-            </Link>
+            </a>
           </div>
         </div>
       </div>

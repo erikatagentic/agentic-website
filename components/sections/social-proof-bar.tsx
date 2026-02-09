@@ -1,5 +1,5 @@
-import { STATS } from "@/lib/constants";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { STATS } from "@/lib/constants";
 
 export function SocialProofBar() {
   return (

@@ -9,6 +9,7 @@ import {
   SheetContent,
   SheetTrigger,
   SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet";
 import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 
@@ -25,6 +26,7 @@ export function MobileNav() {
       </SheetTrigger>
       <SheetContent side="right" className="bg-background">
         <SheetTitle className="sr-only">Navigation menu</SheetTitle>
+        <SheetDescription className="sr-only">Site navigation links and actions</SheetDescription>
         <nav className="mt-8 flex flex-col gap-1">
           {NAV_ITEMS.map((item) => (
             <Link

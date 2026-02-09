@@ -1,6 +1,6 @@
-import { FINAL_CTA, SITE_CONFIG } from "@/lib/constants";
 import { CTAButton } from "@/components/shared/cta-button";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { FINAL_CTA, SITE_CONFIG } from "@/lib/constants";
 
 export function FinalCTASection() {
   return (

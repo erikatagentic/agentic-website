@@ -16,6 +16,7 @@ export function SectionWrapper({
   return (
     <section
       id={id}
+      aria-labelledby={`${id}-heading`}
       className={cn(
         "py-24 md:py-32",
         variant === "surface" && "bg-surface",

@@ -1,13 +1,14 @@
-import { SERVICES } from "@/lib/constants";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { IconBox } from "@/components/shared/icon-box";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { SERVICES } from "@/lib/constants";
 
 export function ServicesSection() {
   return (
     <SectionWrapper id="services">
       <SectionHeading
+        id="services-heading"
         overline="Our Services"
         title="What we build."
         subtitle="Tailored AI automation solutions designed for how your team actually works."

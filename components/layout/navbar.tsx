@@ -1,30 +1,36 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { cn } from "@/lib/utils";
+import { NAV_ITEMS, SITE_CONFIG } from "@/lib/constants";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
+  const sentinelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    // Sentinel observer for navbar background (replaces scroll event)
+    const sentinel = sentinelRef.current;
+    if (!sentinel) return;
 
-  useEffect(() => {
+    const scrollObserver = new IntersectionObserver(
+      ([entry]) => {
+        setScrolled(!entry.isIntersecting);
+      },
+      { threshold: 1 }
+    );
+    scrollObserver.observe(sentinel);
+
+    // Section observer for active nav link
     const sections = NAV_ITEMS.map((item) =>
       document.querySelector(item.href)
     ).filter(Boolean) as Element[];
 
-    const observer = new IntersectionObserver(
+    const sectionObserver = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
@@ -35,11 +41,18 @@ export function Navbar() {
       { rootMargin: "-50% 0px -50% 0px" }
     );
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+    sections.forEach((section) => sectionObserver.observe(section));
+
+    return () => {
+      scrollObserver.disconnect();
+      sectionObserver.disconnect();
+    };
   }, []);
 
   return (
+    <>
+    {/* Sentinel element at top of page for scroll detection */}
+    <div ref={sentinelRef} className="absolute top-[50px] h-px w-px" aria-hidden="true" />
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
@@ -91,5 +104,6 @@ export function Navbar() {
         </div>
       </div>
     </header>
+    </>
   );
 }

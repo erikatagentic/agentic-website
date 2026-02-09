@@ -1,7 +1,7 @@
-import { SOLUTION } from "@/lib/constants";
+import { Badge } from "@/components/ui/badge";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
-import { Badge } from "@/components/ui/badge";
+import { SOLUTION } from "@/lib/constants";
 
 export function SolutionSection() {
   return (

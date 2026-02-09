@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 
 interface SectionHeadingProps {
+  id?: string;
   overline?: string;
   title: string;
   subtitle?: string;
@@ -8,6 +9,7 @@ interface SectionHeadingProps {
 }
 
 export function SectionHeading({
+  id,
   overline,
   title,
   subtitle,
@@ -25,7 +27,10 @@ export function SectionHeading({
           {overline}
         </p>
       )}
-      <h2 className="font-display text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
+      <h2
+        id={id}
+        className="font-display text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl"
+      >
         {title}
       </h2>
       {subtitle && (

@@ -6,7 +6,7 @@ import { MotionWrapper } from "@/components/shared/motion-wrapper";
 export function ResultsSection() {
   return (
     <SectionWrapper id="results">
-      <SectionHeading overline="Results" title="The numbers speak." />
+      <SectionHeading id="results-heading" overline="Results" title="The numbers speak." />
 
       {/* Background glow */}
       <div className="relative">

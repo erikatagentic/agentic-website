@@ -1,13 +1,14 @@
-import { PAIN_POINTS } from "@/lib/constants";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { IconBox } from "@/components/shared/icon-box";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { PAIN_POINTS } from "@/lib/constants";
 
 export function ProblemSection() {
   return (
     <SectionWrapper id="problem">
       <SectionHeading
+        id="problem-heading"
         overline="The Problem"
         title="Your team is drowning in manual work."
       />

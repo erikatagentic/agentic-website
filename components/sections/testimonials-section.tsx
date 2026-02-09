@@ -1,12 +1,13 @@
-import { TESTIMONIALS } from "@/lib/constants";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { TESTIMONIALS } from "@/lib/constants";
 
 export function TestimonialsSection() {
   return (
     <SectionWrapper id="testimonials" variant="surface">
       <SectionHeading
+        id="testimonials-heading"
         overline="Testimonials"
         title="What our clients say."
       />
