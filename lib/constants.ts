@@ -70,6 +70,22 @@ export const STATS: Stat[] = [
   { value: "12", label: "Days to First Meetings" },
 ];
 
+// ── Results (differentiated from social proof STATS) ──
+
+export interface ResultStat {
+  target: number;
+  suffix?: string;
+  prefix?: string;
+  label: string;
+}
+
+export const RESULT_STATS: ResultStat[] = [
+  { target: 47, suffix: "%", label: "Avg. Open Rate" },
+  { target: 8, suffix: "x", label: "ROI on Campaign Spend" },
+  { target: 5, label: "Days Avg. to First Reply" },
+  { target: 92, suffix: "%", label: "Client Retention Rate" },
+];
+
 // ── Problem ──
 
 export interface PainPoint {

@@ -97,7 +97,7 @@ export default function PrivacyPage() {
                   href="https://cal.com/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary underline transition-colors hover:text-primary-hover"
+                  className="text-primary-text underline transition-colors hover:text-foreground"
                 >
                   Cal.com&apos;s Privacy Policy
                 </a>
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
                   href="https://vercel.com/legal/privacy-policy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary underline transition-colors hover:text-primary-hover"
+                  className="text-primary-text underline transition-colors hover:text-foreground"
                 >
                   Vercel&apos;s Privacy Policy
                 </a>
@@ -188,7 +188,7 @@ export default function PrivacyPage() {
                 href={SITE_CONFIG.calLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary underline transition-colors hover:text-primary-hover"
+                className="text-primary-text underline transition-colors hover:text-foreground"
               >
                 {SITE_CONFIG.calLink}
               </a>

@@ -3,6 +3,7 @@ import { SectionHeading } from "@/components/shared/section-heading";
 import { AnimatedCounter } from "@/components/shared/animated-counter";
 import { GradientBlob } from "@/components/shared/gradient-blob";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { RESULT_STATS } from "@/lib/constants";
 
 export function ResultsSection() {
   return (
@@ -19,10 +20,15 @@ export function ResultsSection() {
 
         <MotionWrapper>
           <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
-            <AnimatedCounter target={200} suffix="+" label="Campaigns Deployed" />
-            <AnimatedCounter target={35} suffix="+" label="GTM Teams Served" />
-            <AnimatedCounter target={4} suffix="x" label="Avg. Reply Rate Lift" />
-            <AnimatedCounter target={12} label="Days to First Meetings" />
+            {RESULT_STATS.map((stat) => (
+              <AnimatedCounter
+                key={stat.label}
+                target={stat.target}
+                suffix={stat.suffix}
+                prefix={stat.prefix}
+                label={stat.label}
+              />
+            ))}
           </div>
         </MotionWrapper>
       </div>
