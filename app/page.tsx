@@ -1,5 +1,3 @@
-import { Navbar } from "@/components/layout/navbar";
-import { Footer } from "@/components/layout/footer";
 import { HeroSection } from "@/components/sections/hero-section";
 import { SocialProofBar } from "@/components/sections/social-proof-bar";
 import { ProblemSection } from "@/components/sections/problem-section";
@@ -16,7 +14,6 @@ import { MobileStickyCTA } from "@/components/layout/mobile-sticky-cta";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main>
         <HeroSection />
         <SocialProofBar />
@@ -30,7 +27,6 @@ export default function Home() {
         <FAQSection />
         <FinalCTASection />
       </main>
-      <Footer />
       <MobileStickyCTA />
     </>
   );
