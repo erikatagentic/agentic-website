@@ -13,24 +13,13 @@ interface GradientBlobProps {
   parallaxSpeed?: number;
 }
 
-export function GradientBlob({
-  className,
-  size = "md",
-  color = "violet",
-  parallax = false,
-  parallaxSpeed = 0.3,
-}: GradientBlobProps) {
-  const reducedMotion = useReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, -(parallaxSpeed * 200)]);
-
-  const baseClasses = cn(
+function blobClasses(
+  size: GradientBlobProps["size"],
+  color: GradientBlobProps["color"],
+  reducedMotion: boolean,
+  className?: string
+) {
+  return cn(
     "pointer-events-none absolute rounded-full",
     !reducedMotion && "animate-blob-drift",
     size === "sm" && "h-[300px] w-[300px]",
@@ -42,17 +31,41 @@ export function GradientBlob({
       "bg-[radial-gradient(ellipse_at_center,hsl(239_84%_67%/0.10),transparent_70%)]",
     className
   );
+}
+
+/** Inner component that subscribes to scroll -- only mounted when parallax is needed. */
+function ParallaxBlob({
+  className,
+  speed,
+}: {
+  className: string;
+  speed: number;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, -(speed * 200)]);
+
+  return (
+    <motion.div ref={ref} style={{ y }} className={className} aria-hidden="true" />
+  );
+}
+
+export function GradientBlob({
+  className,
+  size = "md",
+  color = "violet",
+  parallax = false,
+  parallaxSpeed = 0.3,
+}: GradientBlobProps) {
+  const reducedMotion = useReducedMotion();
+  const classes = blobClasses(size, color, reducedMotion, className);
 
   if (parallax && !reducedMotion) {
-    return (
-      <motion.div
-        ref={ref}
-        style={{ y }}
-        className={baseClasses}
-        aria-hidden="true"
-      />
-    );
+    return <ParallaxBlob className={classes} speed={parallaxSpeed} />;
   }
 
-  return <div ref={ref} className={baseClasses} aria-hidden="true" />;
+  return <div className={classes} aria-hidden="true" />;
 }

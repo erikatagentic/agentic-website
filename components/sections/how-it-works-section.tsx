@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { TimelineConnector } from "@/components/shared/timeline-connector";
-import { easeOutQuad } from "@/lib/motion";
+import { easeOutQuadMutable } from "@/lib/motion";
 import { STEPS } from "@/lib/constants";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
@@ -13,7 +13,7 @@ const stepVariants = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { duration: 0.5, ease: [...easeOutQuad] as [number, number, number, number] },
+    transition: { duration: 0.5, ease: easeOutQuadMutable },
   },
 };
 
@@ -22,7 +22,7 @@ const numberVariants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.4, ease: [...easeOutQuad] as [number, number, number, number] },
+    transition: { duration: 0.4, ease: easeOutQuadMutable },
   },
 };
 

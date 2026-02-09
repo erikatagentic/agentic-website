@@ -8,6 +8,18 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+// ── Brand Colors (used in OG images and non-CSS contexts) ──
+// Keep in sync with globals.css design tokens
+
+export const BRAND_COLORS = {
+  background: "#09090B",
+  backgroundAlt: "#18181B",
+  primaryText: "#A78BFA",
+  foreground: "#FAFAFA",
+  foregroundMuted: "#A1A1AA",
+  primaryGlow: "rgba(124,58,237,0.3)",
+} as const;
+
 // ── Site Config ──
 
 export const SITE_CONFIG = {
@@ -56,6 +68,22 @@ export const STATS: Stat[] = [
   { value: "35+", label: "GTM Teams Served" },
   { value: "4.2x", label: "Avg. Reply Rate Lift" },
   { value: "12", label: "Days to First Meetings" },
+];
+
+// ── Results (differentiated from STATS) ──
+
+export interface ResultStat {
+  target: number;
+  suffix?: string;
+  prefix?: string;
+  label: string;
+}
+
+export const RESULT_STATS: ResultStat[] = [
+  { target: 47, suffix: "%", label: "Avg. Open Rate" },
+  { target: 8, suffix: "x", label: "ROI on Campaign Spend" },
+  { target: 5, label: "Days Avg. to First Reply" },
+  { target: 92, suffix: "%", label: "Client Retention Rate" },
 ];
 
 // ── Problem ──

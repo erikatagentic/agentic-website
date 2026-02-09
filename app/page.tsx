@@ -14,7 +14,7 @@ import { MobileStickyCTA } from "@/components/layout/mobile-sticky-cta";
 export default function Home() {
   return (
     <>
-      <main>
+      <main id="main-content">
         <HeroSection />
         <SocialProofBar />
         <ProblemSection />

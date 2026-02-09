@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <main className="py-24 md:py-32">
+    <main id="main-content" className="py-24 md:py-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -97,7 +97,7 @@ export default function PrivacyPage() {
                   href="https://cal.com/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary underline transition-colors hover:text-primary-hover"
+                  className="text-primary-text underline transition-colors hover:text-primary-text-hover"
                 >
                   Cal.com&apos;s Privacy Policy
                 </a>
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
                   href="https://vercel.com/legal/privacy-policy"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary underline transition-colors hover:text-primary-hover"
+                  className="text-primary-text underline transition-colors hover:text-primary-text-hover"
                 >
                   Vercel&apos;s Privacy Policy
                 </a>
@@ -188,7 +188,7 @@ export default function PrivacyPage() {
                 href={SITE_CONFIG.calLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary underline transition-colors hover:text-primary-hover"
+                className="text-primary-text underline transition-colors hover:text-primary-text-hover"
               >
                 {SITE_CONFIG.calLink}
               </a>

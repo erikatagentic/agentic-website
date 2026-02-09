@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { BRAND_COLORS, SITE_CONFIG } from "@/lib/constants";
 
 export const alt = "Agentic | Clay-Powered GTM Automation";
 export const size = { width: 1200, height: 630 };
@@ -10,8 +11,7 @@ export default async function OGImage() {
     (
       <div
         style={{
-          background:
-            "linear-gradient(135deg, #09090B 0%, #18181B 50%, #09090B 100%)",
+          background: `linear-gradient(135deg, ${BRAND_COLORS.background} 0%, ${BRAND_COLORS.backgroundAlt} 50%, ${BRAND_COLORS.background} 100%)`,
           width: "100%",
           height: "100%",
           display: "flex",
@@ -31,37 +31,36 @@ export default async function OGImage() {
             width: 600,
             height: 600,
             borderRadius: "50%",
-            background:
-              "radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%)",
+            background: `radial-gradient(circle, ${BRAND_COLORS.primaryGlow} 0%, transparent 70%)`,
           }}
         />
         <div
           style={{
             fontSize: 32,
             fontWeight: 500,
-            color: "#A78BFA",
+            color: BRAND_COLORS.primaryText,
             letterSpacing: "0.05em",
             marginBottom: 24,
           }}
         >
-          AGENTIC
+          {SITE_CONFIG.name.toUpperCase()}
         </div>
         <div
           style={{
             fontSize: 64,
             fontWeight: 700,
-            color: "#FAFAFA",
+            color: BRAND_COLORS.foreground,
             textAlign: "center",
             maxWidth: 900,
             lineHeight: 1.1,
           }}
         >
-          Clay-Powered GTM Automation
+          {SITE_CONFIG.tagline}
         </div>
         <div
           style={{
             fontSize: 24,
-            color: "#A1A1AA",
+            color: BRAND_COLORS.foregroundMuted,
             marginTop: 24,
             textAlign: "center",
             maxWidth: 700,

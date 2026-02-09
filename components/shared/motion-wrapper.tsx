@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
-import { easeOutQuad } from "@/lib/motion";
+import { easeOutQuadMutable } from "@/lib/motion";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 
 const variants = {
@@ -40,7 +40,7 @@ export function MotionWrapper({
       transition={{
         duration: 0.5,
         delay,
-        ease: [...easeOutQuad] as [number, number, number, number],
+        ease: easeOutQuadMutable,
       }}
       className={cn(className)}
     >

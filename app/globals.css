@@ -126,6 +126,11 @@
   html {
     scroll-behavior: smooth;
   }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
   body {
     @apply bg-background text-foreground;
   }
@@ -211,13 +216,25 @@
   transition: background 0.5s ease;
 }
 
-.gradient-border-card:hover::before {
+.gradient-border-card:hover::before,
+.gradient-border-card:focus-within::before {
   background: linear-gradient(
     135deg,
     hsl(255 92% 76% / 0.5),
     hsl(239 84% 67% / 0.3),
     hsl(255 92% 76% / 0.1)
   );
+}
+
+@media (pointer: coarse) {
+  .gradient-border-card::before {
+    background: linear-gradient(
+      135deg,
+      hsl(255 92% 76% / 0.2),
+      hsl(239 84% 67% / 0.1),
+      hsl(255 92% 76% / 0.05)
+    );
+  }
 }
 
 /* ── Reduced Motion ── */
