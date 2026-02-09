@@ -11,30 +11,40 @@ export function MobileStickyCTA() {
   useEffect(() => {
     const hero = document.getElementById("hero");
     const footer = document.querySelector("footer");
-    if (!hero || !footer) return;
+    if (!hero) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.target === hero) {
-            if (!entry.isIntersecting) {
-              setVisible(true);
-            }
-          }
-          if (entry.target === footer) {
-            if (entry.isIntersecting) {
-              setVisible(false);
-            }
-          }
-        }
+    let heroVisible = true;
+    let footerVisible = false;
+
+    const update = () => {
+      setVisible(!heroVisible && !footerVisible);
+    };
+
+    const heroObserver = new IntersectionObserver(
+      ([entry]) => {
+        heroVisible = entry.isIntersecting;
+        update();
       },
       { threshold: 0 }
     );
+    heroObserver.observe(hero);
 
-    observer.observe(hero);
-    observer.observe(footer);
+    let footerObserver: IntersectionObserver | undefined;
+    if (footer) {
+      footerObserver = new IntersectionObserver(
+        ([entry]) => {
+          footerVisible = entry.isIntersecting;
+          update();
+        },
+        { threshold: 0 }
+      );
+      footerObserver.observe(footer);
+    }
 
-    return () => observer.disconnect();
+    return () => {
+      heroObserver.disconnect();
+      footerObserver?.disconnect();
+    };
   }, []);
 
   return (

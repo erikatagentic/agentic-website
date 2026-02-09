@@ -69,6 +69,9 @@ export function Navbar() {
           aria-label="Agentic home"
         >
           <LogoIcon size={32} className="text-primary" />
+          <span className="font-display text-lg font-normal tracking-tight text-foreground">
+            {SITE_CONFIG.name}
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="py-24 md:py-32">
+    <main id="main-content" className="py-24 md:py-32">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
@@ -181,7 +181,7 @@ export default function TermsPage() {
                 href={SITE_CONFIG.calLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary underline transition-colors hover:text-primary-hover"
+                className="text-primary-text underline transition-colors hover:text-primary-text-hover"
               >
                 {SITE_CONFIG.calLink}
               </a>

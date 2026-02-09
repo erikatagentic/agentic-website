@@ -17,9 +17,12 @@ export function Footer() {
               aria-label="Agentic home"
             >
               <LogoIcon size={32} className="text-primary" />
+              <span className="font-display text-lg font-normal tracking-tight text-foreground">
+                {SITE_CONFIG.name}
+              </span>
             </Link>
-            <p className="mt-2 text-sm text-foreground-muted">
-              {SITE_CONFIG.tagline}
+            <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
+              {SITE_CONFIG.description}
             </p>
           </div>
 

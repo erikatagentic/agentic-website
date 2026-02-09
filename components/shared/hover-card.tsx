@@ -24,7 +24,6 @@ export function HoverCard({ children, className }: HoverCardProps) {
         scale: 1.02,
         transition: { duration: 0.3, ease: [...easeOutQuad] as [number, number, number, number] },
       }}
-      whileTap={{ scale: 0.98 }}
     >
       {children}
     </motion.div>

@@ -35,6 +35,9 @@ export function FinalCTASection() {
               {FINAL_CTA.cta}
             </CTAButton>
           </div>
+          <p className="mt-4 text-sm text-foreground-subtle">
+            {FINAL_CTA.note}
+          </p>
         </MotionWrapper>
       </div>
     </section>

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { CTAButton } from "@/components/shared/cta-button";
 import { GradientBlob } from "@/components/shared/gradient-blob";
+import { SignalFlow } from "@/components/shared/signal-flow";
 import { easeOutQuad } from "@/lib/motion";
 import { HERO, SITE_CONFIG } from "@/lib/constants";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -101,6 +102,8 @@ export function HeroSection() {
             </div>
           </Item>
         </Container>
+
+        <SignalFlow />
       </div>
     </section>
   );
