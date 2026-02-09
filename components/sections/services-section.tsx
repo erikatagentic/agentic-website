@@ -18,9 +18,9 @@ export function ServicesSection() {
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {SERVICES.map((service, index) => (
-          <MotionWrapper key={service.title} delay={index * 0.1} className="flex">
-            <HoverCard className="flex">
-              <div className="card-hover-glow gradient-border-card flex flex-1 flex-col rounded-xl border border-border bg-surface p-6 md:p-8">
+          <MotionWrapper key={service.title} delay={index * 0.1} className="h-full">
+            <HoverCard className="h-full">
+              <div className="card-hover-glow gradient-border-card flex h-full flex-col rounded-xl border border-border bg-surface p-6 md:p-8">
                 <AnimatedIconBox>
                   <IconBox icon={service.icon} variant="primary" size="lg" />
                 </AnimatedIconBox>

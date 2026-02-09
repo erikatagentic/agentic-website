@@ -17,9 +17,9 @@ export function ProblemSection() {
 
       <div className="grid gap-8 md:grid-cols-3">
         {PAIN_POINTS.map((point, index) => (
-          <MotionWrapper key={point.title} delay={index * 0.1} className="flex">
-            <HoverCard className="flex">
-              <div className="card-hover-glow flex flex-1 flex-col rounded-xl border border-border bg-surface p-6 md:p-8">
+          <MotionWrapper key={point.title} delay={index * 0.1} className="h-full">
+            <HoverCard className="h-full">
+              <div className="card-hover-glow flex h-full flex-col rounded-xl border border-border bg-surface p-6 md:p-8">
                 <AnimatedIconBox>
                   <IconBox icon={point.icon} variant="primary" />
                 </AnimatedIconBox>
