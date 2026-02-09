@@ -1,4 +1,5 @@
 import { CTAButton } from "@/components/shared/cta-button";
+import { GradientBlob } from "@/components/shared/gradient-blob";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
 import { FINAL_CTA, SITE_CONFIG } from "@/lib/constants";
 
@@ -13,9 +14,12 @@ export function FinalCTASection() {
         className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background via-surface to-background"
         aria-hidden="true"
       />
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(262_83%_58%/0.1),transparent_70%)]"
-        aria-hidden="true"
+      <GradientBlob
+        size="lg"
+        color="violet"
+        parallax
+        parallaxSpeed={0.2}
+        className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40"
       />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

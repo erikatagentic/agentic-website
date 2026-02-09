@@ -130,3 +130,109 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ── Animation Keyframes ── */
+
+@keyframes cta-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 15px hsl(255 92% 76% / 0.15), 0 0 30px hsl(255 92% 76% / 0.05);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(255 92% 76% / 0.25), 0 0 40px hsl(255 92% 76% / 0.1);
+  }
+}
+
+@keyframes blob-drift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translate(15px, -10px) scale(1.03);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate(-10px, 8px) scale(0.97);
+    opacity: 1;
+  }
+}
+
+/* ── Component Animations ── */
+
+.cta-glow {
+  animation: cta-glow-pulse 3s ease-in-out infinite;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.cta-glow:hover {
+  transform: scale(1.03);
+}
+
+.cta-glow:active {
+  transform: scale(0.98);
+}
+
+.animate-blob-drift {
+  animation: blob-drift 12s ease-in-out infinite;
+}
+
+.card-hover-glow {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-hover-glow:hover {
+  box-shadow: var(--shadow-glow-sm);
+  border-color: var(--border-hover);
+}
+
+.gradient-border-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-border-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    hsl(255 92% 76% / 0),
+    hsl(255 92% 76% / 0),
+    hsl(255 92% 76% / 0)
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  transition: background 0.5s ease;
+}
+
+.gradient-border-card:hover::before {
+  background: linear-gradient(
+    135deg,
+    hsl(255 92% 76% / 0.5),
+    hsl(239 84% 67% / 0.3),
+    hsl(255 92% 76% / 0.1)
+  );
+}
+
+/* ── Reduced Motion ── */
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-glow {
+    animation: none;
+    box-shadow: 0 0 15px hsl(255 92% 76% / 0.15);
+  }
+
+  .cta-glow:hover {
+    transform: none;
+  }
+
+  .animate-blob-drift {
+    animation: none;
+  }
+}

@@ -32,7 +32,7 @@ export function CTAButton({
 
   const buttonClasses = cn(
     size === "lg" && "h-12 px-8 text-base",
-    variant === "primary" && "hover:bg-primary-cta-hover",
+    variant === "primary" && "hover:bg-primary-cta-hover cta-glow",
     variant === "ghost" && "text-primary-text hover:text-primary-text-hover",
     className
   );

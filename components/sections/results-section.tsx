@@ -1,6 +1,7 @@
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { AnimatedCounter } from "@/components/shared/animated-counter";
+import { GradientBlob } from "@/components/shared/gradient-blob";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
 
 export function ResultsSection() {
@@ -10,9 +11,10 @@ export function ResultsSection() {
 
       {/* Background glow */}
       <div className="relative">
-        <div
-          className="pointer-events-none absolute inset-0 -m-8 rounded-2xl bg-[radial-gradient(ellipse_at_center,hsl(255_92%_76%/0.08),transparent_70%)]"
-          aria-hidden="true"
+        <GradientBlob
+          size="md"
+          color="violet"
+          className="-m-8 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60"
         />
 
         <MotionWrapper>
