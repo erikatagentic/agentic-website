@@ -52,8 +52,8 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "127", label: "Workflows Deployed" },
-  { value: "34", label: "Teams Served" },
+  { value: "48+", label: "Client Engagements" },
+  { value: "11", label: "Industries Served" },
   { value: "8.2x", label: "Avg. Efficiency Gain" },
   { value: "96%", label: "Client Retention" },
 ];
@@ -69,32 +69,32 @@ export interface PainPoint {
 export const PAIN_POINTS: PainPoint[] = [
   {
     icon: Clock,
-    title: "26 hours per week on data entry and handoffs",
+    title: "You bought the tools. They sit unused.",
     description:
-      "Your ops team copies data between CRM, spreadsheets, and Slack instead of closing deals. That's $62,000 per employee per year spent on work a script could handle.",
+      "You signed up for Zapier, explored Make, maybe even spun up n8n. But connecting the dots across your actual workflows — with the right AI models, error handling, and edge cases — requires more than a free trial.",
   },
   {
     icon: AlertTriangle,
-    title: "4.7% error rate on manual processes",
+    title: "Your pilots never made it to production",
     description:
-      "Missed follow-ups, wrong invoice amounts, duplicate records. Every copy-paste is a coin flip — and one bad data entry costs 18x more to fix downstream.",
+      "The proof-of-concept worked in a demo. But 85% of AI pilots stall before launch because nobody planned for data quality, team adoption, or what happens when the model gets it wrong.",
   },
   {
     icon: Users,
-    title: "Every new client means another hire",
+    title: "Scaling still means hiring",
     description:
-      "You're spending $85K+ per operations hire to handle work that doesn't require human judgment. Your margin shrinks with every headcount you add.",
+      "Every new client, campaign, or product line adds manual work. You keep hiring ops people for tasks that don't require human judgment — and your margins shrink with every headcount.",
   },
 ];
 
 // ── Solution ──
 
 export const SOLUTION = {
-  title: "There's a better way.",
+  title: "Stop paying to experiment.",
   subtitle:
-    "We map your actual workflows — every handoff, every decision point, every tool — then build AI pipelines that handle the repetitive 80% while your team focuses on the 20% that requires human judgment.",
+    "We're workflow specialists first, AI specialists second. We start by understanding how your team actually works — where time is lost, what slows things down — then build pipelines that handle the repetitive 80% while your team focuses on the work that matters.",
   differentiator:
-    "Built on your stack, mapped to your process, owned by your team.",
+    "We don't hand off and vanish. We build it, deploy it, and train your team to run it.",
 } as const;
 
 // ── Services ──
@@ -266,6 +266,11 @@ export const FAQ_ITEMS: FAQItem[] = [
     question: "What if the AI makes mistakes?",
     answer:
       "Every pipeline includes validation checkpoints, human-in-the-loop approval for high-stakes decisions, and automated error alerting. We design for failure — when something unexpected happens, the workflow flags it and routes to a human instead of guessing. Our production error rate is under 0.5%.",
+  },
+  {
+    question: "We've tried AI before and it didn't work. Why is this different?",
+    answer:
+      "Most teams fail because they start with the wrong use case, stop at the prototype stage, or try to do it themselves with generic tools. We focus only on workflows worth automating, stay through production deployment, and train your team on the finished system. We don't hand off slide decks — we hand off working pipelines.",
   },
   {
     question: "Do we need AI or engineering expertise on our team?",
