@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { Navbar } from "@/components/layout/navbar";
+import { Footer } from "@/components/layout/footer";
 import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { BackToTop } from "@/components/layout/back-to-top";
 import { HeroVisibilityProvider } from "@/hooks/use-hero-visibility";
@@ -90,6 +91,7 @@ export default function RootLayout({
           <ScrollProgress />
           <Navbar />
           {children}
+          <Footer />
           <BackToTop />
         </HeroVisibilityProvider>
       </body>
