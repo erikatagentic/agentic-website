@@ -19,10 +19,10 @@ export function ResultsSection() {
 
         <MotionWrapper>
           <div className="relative grid grid-cols-2 gap-8 md:grid-cols-4">
-            <AnimatedCounter target={150} suffix="+" label="Workflows Automated" />
-            <AnimatedCounter target={10} suffix="x" label="Average Efficiency Gain" />
-            <AnimatedCounter target={98} suffix="%" label="Client Retention" />
-            <AnimatedCounter target={3} label="Days to Deploy" />
+            <AnimatedCounter target={200} suffix="+" label="Campaigns Deployed" />
+            <AnimatedCounter target={35} suffix="+" label="GTM Teams Served" />
+            <AnimatedCounter target={4} suffix="x" label="Avg. Reply Rate Lift" />
+            <AnimatedCounter target={12} label="Days to First Meetings" />
           </div>
         </MotionWrapper>
       </div>

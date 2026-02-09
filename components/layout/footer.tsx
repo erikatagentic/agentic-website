@@ -13,11 +13,10 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="flex items-center gap-2 font-display text-xl font-normal italic tracking-tight"
+              className="flex items-center gap-2"
+              aria-label="Agentic home"
             >
-              <LogoIcon size={28} className="text-primary" />
-              Agentic
-              <span className="text-primary-text">.</span>
+              <LogoIcon size={32} className="text-primary" />
             </Link>
             <p className="mt-2 text-sm text-foreground-muted">
               {SITE_CONFIG.tagline}

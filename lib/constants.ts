@@ -1,10 +1,10 @@
 import {
-  Workflow,
-  Plug,
-  Search,
-  Clock,
-  AlertTriangle,
-  Users,
+  Target,
+  Radio,
+  TrendingUp,
+  Database,
+  Radar,
+  Mail,
   type LucideIcon,
 } from "lucide-react";
 
@@ -12,9 +12,9 @@ import {
 
 export const SITE_CONFIG = {
   name: "Agentic",
-  tagline: "AI Workflow Automation",
+  tagline: "Clay-Powered GTM Automation",
   description:
-    "We build custom AI automation pipelines that eliminate manual work and deploy in days. n8n workflows, LLM integrations, and process intelligence for operations teams.",
+    "We build signals-based outbound systems on Clay that detect buying intent, enrich prospects, and generate qualified pipeline. Campaigns live in days, not weeks.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://heyagentic.ai",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK || "https://cal.com/agentic/demo",
 } as const;
@@ -36,9 +36,9 @@ export const NAV_ITEMS: NavItem[] = [
 // ── Hero ──
 
 export const HERO = {
-  headline: "Ship AI workflows in days, not quarters",
+  headline: "Turn buying signals into booked meetings",
   subheadline:
-    "We build and deploy custom automation pipelines that cut manual ops work by 80% — live in your stack within 5 business days.",
+    "We build Clay-powered outbound systems that detect funding rounds, job changes, and hiring surges, then convert them into qualified pipeline. Campaigns go live in days.",
   primaryCta: "Book a Demo",
   secondaryCta: "See How It Works",
   secondaryCtaHref: "#how-it-works",
@@ -52,10 +52,10 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "48+", label: "Client Engagements" },
-  { value: "11", label: "Industries Served" },
-  { value: "8.2x", label: "Avg. Efficiency Gain" },
-  { value: "96%", label: "Client Retention" },
+  { value: "200+", label: "Campaigns Deployed" },
+  { value: "35+", label: "GTM Teams Served" },
+  { value: "4.2x", label: "Avg. Reply Rate Lift" },
+  { value: "12", label: "Days to First Meetings" },
 ];
 
 // ── Problem ──
@@ -68,33 +68,33 @@ export interface PainPoint {
 
 export const PAIN_POINTS: PainPoint[] = [
   {
-    icon: Clock,
-    title: "You bought the tools. They sit unused.",
+    icon: Target,
+    title: "Your outbound is spray-and-pray",
     description:
-      "You signed up for Zapier, explored Make, maybe even spun up n8n. But connecting the dots across your actual workflows — with the right AI models, error handling, and edge cases — requires more than a free trial.",
+      "You blast the same generic sequence to thousands of prospects. Reply rates sit below 1%, and your team burns hours on leads who were never going to buy.",
   },
   {
-    icon: AlertTriangle,
-    title: "Your pilots never made it to production",
+    icon: Radio,
+    title: "You're missing buying signals",
     description:
-      "The proof-of-concept worked in a demo. But 85% of AI pilots stall before launch because nobody planned for data quality, team adoption, or what happens when the model gets it wrong.",
+      "Prospects raise funding, switch jobs, and adopt new tools every day. By the time your team notices, a competitor already booked the meeting.",
   },
   {
-    icon: Users,
-    title: "Scaling still means hiring",
+    icon: TrendingUp,
+    title: "You can't scale without sacrificing quality",
     description:
-      "Every new client, campaign, or product line adds manual work. You keep hiring ops people for tasks that don't require human judgment — and your margins shrink with every headcount.",
+      "Personalized outreach works, but it takes 15 minutes per prospect. Your SDRs choose between volume and relevance. They shouldn't have to.",
   },
 ];
 
 // ── Solution ──
 
 export const SOLUTION = {
-  title: "Stop paying to experiment.",
+  title: "Signals-based outreach changes everything.",
   subtitle:
-    "We're workflow specialists first, AI specialists second. We start by understanding how your team actually works — where time is lost, what slows things down — then build pipelines that handle the repetitive 80% while your team focuses on the work that matters.",
+    "We build Clay-powered systems that monitor buying signals across 150+ data providers, enrich every prospect with the context that matters, and trigger personalized sequences at exactly the right moment. Your pipeline fills while your team focuses on closing.",
   differentiator:
-    "We don't hand off and vanish. We build it, deploy it, and train your team to run it.",
+    "Clay + n8n + AI personalization. Built for your ICP, not a generic template.",
 } as const;
 
 // ── Services ──
@@ -107,22 +107,22 @@ export interface ServiceCard {
 
 export const SERVICES: ServiceCard[] = [
   {
-    icon: Workflow,
-    title: "AI Workflow Automation",
+    icon: Database,
+    title: "Clay Workflow Automation",
     description:
-      "Eliminate 20+ hours of manual work per week with n8n pipelines that connect your CRM, databases, and communication tools — with LLMs handling the decisions humans used to make.",
+      "Signal monitoring, enrichment waterfalls, and lead scoring tables built in Clay. We connect 150+ data providers and route qualified prospects directly into your sequences.",
   },
   {
-    icon: Plug,
-    title: "Custom AI Integrations",
+    icon: Radar,
+    title: "GTM Data Infrastructure",
     description:
-      "Connect GPT-4, Claude, and vector databases directly into Salesforce, HubSpot, Slack, or your internal tools. Average integration ships in 48 hours, not 3 months.",
+      "ICP definition, CRM enrichment, and account scoring pipelines. Clean data in, qualified leads out. We integrate Clay with HubSpot, Salesforce, and your existing stack.",
   },
   {
-    icon: Search,
-    title: "Process Intelligence",
+    icon: Mail,
+    title: "Outbound Campaign Design",
     description:
-      "We audit your operations, identify which workflows burn the most hours, and deliver a prioritized automation roadmap. Most teams find 40% of their tasks are automatable on day one.",
+      "Signals-based campaigns that pair the right trigger with the right message. Funding rounds, job changes, hiring surges, tech stack shifts. Each signal gets its own playbook.",
   },
 ];
 
@@ -139,25 +139,25 @@ export const STEPS: Step[] = [
     number: 1,
     title: "Discovery",
     description:
-      "A 90-minute deep-dive into your workflows. We map every tool, handoff, and decision point — then deliver a prioritized automation scorecard within 24 hours.",
+      "We audit your current GTM stack, define your ICP with precision, and identify which buying signals map to your highest-converting opportunities.",
   },
   {
     number: 2,
-    title: "Design",
+    title: "Build",
     description:
-      "We architect your pipeline: data flows, LLM prompts, error handling, and fallback logic. You approve a visual blueprint before we write a single line of code.",
+      "We configure Clay tables, set up signal detection across funding, hiring, job changes, and tech adoption. Enrichment waterfalls and scoring logic go live in your workspace.",
   },
   {
     number: 3,
-    title: "Deploy",
+    title: "Launch",
     description:
-      "We build, test, and ship your automation into production on your infrastructure. First workflow goes live within 5 business days — with monitoring from day one.",
+      "Campaigns connect to your email platform and CRM. Signals trigger personalized sequences automatically. First outbound hits inboxes within days of kickoff.",
   },
   {
     number: 4,
     title: "Optimize",
     description:
-      "Weekly performance reports, prompt tuning, and workflow expansion. Our clients automate 3 additional workflows within the first 60 days on average.",
+      "We tune signal thresholds, A/B test messaging, expand to new ICPs, and continuously improve reply rates. Monthly performance reviews keep your pipeline growing.",
   },
 ];
 
@@ -173,23 +173,23 @@ export interface Testimonial {
 export const TESTIMONIALS: Testimonial[] = [
   {
     quote:
-      "We onboarded 3x more clients last quarter without adding headcount. Agentic automated our entire intake pipeline — what took 4 hours per client now runs in 11 minutes.",
+      "Agentic built our entire signals-based outbound system in 10 days. We went from 0.8% reply rates to 4.7% in the first month. Our SDRs now spend time on calls instead of research.",
     author: "Sarah Chen",
-    role: "VP of Operations",
-    company: "Meridian Partners",
+    role: "VP of Revenue Operations",
+    company: "Meridian SaaS",
   },
   {
     quote:
-      "Other vendors wanted to sell us their platform. Agentic sat in our Slack, watched how we actually worked, and built around it. Our team adopted it on day one because nothing changed except the busywork disappeared.",
+      "We tried building Clay workflows ourselves for three months. Agentic rebuilt everything in a week and our demo-to-opportunity conversion doubled. The signal targeting alone was worth it.",
     author: "Marcus Webb",
-    role: "CTO",
+    role: "Head of Growth",
     company: "Trellus Health",
   },
   {
     quote:
-      "We cut invoice processing errors from 6.3% to 0.4% in the first month. The finance team went from dreading month-end close to finishing it two days early.",
+      "Our funding signal campaign books 12 meetings per month on autopilot. Agentic connected Clay, HubSpot, and our email platform into one system that runs without us touching it.",
     author: "Elena Vasquez",
-    role: "Director of Engineering",
+    role: "Director of Sales Development",
     company: "Canopy Financial",
   },
 ];
@@ -205,32 +205,32 @@ export interface UseCase {
 
 export const USE_CASES: UseCase[] = [
   {
-    tab: "Sales Ops",
+    tab: "Funding Signal",
     description:
-      "AI scores inbound leads, enriches CRM records from LinkedIn and Clearbit, and triggers personalized follow-up sequences — all before your rep opens their laptop.",
-    tools: ["HubSpot", "Clay", "Claude", "Slack"],
-    result: "2.8x increase in qualified pipeline",
+      "Detect when target accounts raise new rounds. Clay enriches the company with headcount, tech stack, and decision-maker contacts. Personalized outreach references their funding news and offers relevant solutions.",
+    tools: ["Clay", "Crunchbase", "HubSpot", "Smartlead"],
+    result: "8 meetings booked per 100 signals detected",
   },
   {
-    tab: "Customer Support",
+    tab: "Job Change Signal",
     description:
-      "Incoming tickets get classified, routed to the right team, and auto-drafted with context-aware responses. Escalations trigger Slack alerts with full conversation history.",
-    tools: ["Intercom", "Linear", "Claude", "Slack"],
-    result: "71% reduction in first-response time",
+      "Monitor when past champions and power users switch companies. Trigger warm re-engagement sequences that reference your shared history and offer to bring proven results to their new org.",
+    tools: ["Clay", "LinkedIn", "Salesforce", "Outreach"],
+    result: "3.2x higher reply rate than cold outbound",
   },
   {
-    tab: "Finance",
+    tab: "Hiring Signal",
     description:
-      "Invoices get extracted, categorized, matched to POs, and flagged for exceptions — no spreadsheets involved. Monthly close goes from 5 days to 2.",
-    tools: ["QuickBooks", "Stripe", "Google Sheets", "n8n"],
-    result: "14 hours saved per week",
+      "Track companies posting roles that indicate scaling pain. A company hiring 5 SDRs needs automation. A company hiring a RevOps lead needs infrastructure. Match the signal to your offer.",
+    tools: ["Clay", "LinkedIn Jobs", "n8n", "HubSpot"],
+    result: "22% meeting-booked rate on hiring triggers",
   },
   {
-    tab: "Engineering",
+    tab: "Tech Stack Signal",
     description:
-      "CI failures get triaged by an LLM that reads logs, suggests fixes, and routes to the right engineer. Incident response runbooks execute automatically.",
-    tools: ["GitHub", "PagerDuty", "Slack", "Linear"],
-    result: "47% faster incident resolution",
+      "Catch companies adopting or dropping tools in your ecosystem. A CRM migration signals budget and willingness to invest. Time your outreach to land during the evaluation window.",
+    tools: ["Clay", "BuiltWith", "Slack", "Smartlead"],
+    result: "5x pipeline from tech-change triggers vs. cold lists",
   },
 ];
 
@@ -243,53 +243,43 @@ export interface FAQItem {
 
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    question: "What kinds of workflows can you automate?",
+    question: "What is Clay and why do I need an agency?",
     answer:
-      "Anything with repeatable steps, data movement between tools, or decisions that follow patterns. Our most common projects: lead enrichment and routing, invoice processing, employee onboarding, ticket triage, report generation, and approval workflows. If your team does it more than 10 times a week, it's probably automatable.",
+      "Clay is a data enrichment and outbound automation platform that connects 150+ data providers. It is powerful but complex. Most teams spend months learning it and still underutilize its capabilities. We configure everything: signal detection, enrichment waterfalls, scoring logic, and CRM integrations. You get a production-ready system without the learning curve.",
   },
   {
-    question: "How long until our first workflow is live?",
+    question: "What buying signals can you monitor?",
     answer:
-      "5 business days for most workflows. We scope everything in a 90-minute discovery call, so there are no surprises. Complex multi-system integrations with custom LLM logic may take 2-3 weeks.",
+      "Funding rounds, job changes, new hires, tech stack adoption, leadership changes, company growth metrics, LinkedIn engagement, website visits, and more. We design signal strategies based on your ICP, so you only get alerts for prospects who match your ideal buyer profile.",
   },
   {
-    question: "Do you work with our existing tools?",
+    question: "How long does it take to launch a campaign?",
     answer:
-      "Yes. We build on n8n and custom orchestration, which connects to 400+ tools natively — Salesforce, HubSpot, Slack, Jira, Google Workspace, Notion, Postgres, and any REST or GraphQL API. If it has an API, we connect it.",
+      "Most campaigns go live within 5-10 business days. That includes ICP definition, Clay table setup, signal configuration, enrichment workflows, sequence copy, and CRM integration. We scope everything upfront so there are no surprises.",
+  },
+  {
+    question: "Do you work with our existing CRM and email tools?",
+    answer:
+      "Yes. We integrate with HubSpot, Salesforce, Outreach, Salesloft, Smartlead, Instantly, Apollo, and most major GTM platforms. If your tool has an API, we connect it to your Clay workflows.",
   },
   {
     question: "What does pricing look like?",
     answer:
-      "Project-based pricing starts at $4,500 for a single workflow pipeline. Retainer packages for ongoing automation work start at $8,000/month. Every engagement begins with a free 30-minute scoping call — you know exactly what you're paying for before we start.",
+      "Campaign builds start at $5,000 for a single signal workflow. Retainer packages for ongoing campaign management and optimization start at $8,000/month. Every engagement starts with a free 30-minute scoping call where we map your highest-impact signal opportunity.",
   },
   {
-    question: "What if the AI makes mistakes?",
+    question: "How is this different from hiring another SDR?",
     answer:
-      "Every pipeline includes validation checkpoints, human-in-the-loop approval for high-stakes decisions, and automated error alerting. We design for failure — when something unexpected happens, the workflow flags it and routes to a human instead of guessing. Our production error rate is under 0.5%.",
-  },
-  {
-    question: "We've tried AI before and it didn't work. Why is this different?",
-    answer:
-      "Most teams fail because they start with the wrong use case, stop at the prototype stage, or try to do it themselves with generic tools. We focus only on workflows worth automating, stay through production deployment, and train your team on the finished system. We don't hand off slide decks — we hand off working pipelines.",
-  },
-  {
-    question: "Do we need AI or engineering expertise on our team?",
-    answer:
-      "No. We handle architecture, implementation, and maintenance. Your team explains the workflow as it works today — we build the automation. After handoff, your ops team monitors everything through a visual dashboard with documentation and a walkthrough.",
-  },
-  {
-    question: "What happens after deployment?",
-    answer:
-      "We monitor performance weekly, tune LLM prompts based on real outputs, and expand your automation scope over time. Retainer clients automate an average of 3 new workflows in the first 60 days. Workflows aren't 'set and forget' — they get smarter as your business evolves.",
+      "An SDR costs $60-80K per year and manually researches 30-50 prospects per day. A Clay-powered signal system monitors thousands of accounts continuously, enriches every match automatically, and triggers personalized outreach around the clock. You get 10x the volume at a fraction of the cost, and your SDRs focus on conversations instead of data entry.",
   },
 ];
 
 // ── Final CTA ──
 
 export const FINAL_CTA = {
-  headline: "Your competitors are already automating.",
+  headline: "Your competitors are already using signals.",
   subheadline:
-    "Book a 30-minute call and we'll map your highest-impact automation opportunity — free.",
+    "Book a 30-minute call and we'll map your highest-value signal campaign — free.",
   cta: "Book a Demo",
-  note: "No commitment required. No sales deck. Just a technical conversation about your workflows.",
+  note: "No commitment required. No sales deck. Just a technical conversation about your pipeline.",
 } as const;

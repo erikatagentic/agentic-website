@@ -13,7 +13,7 @@ export function ServicesSection() {
         id="services-heading"
         overline="Our Services"
         title="What we build."
-        subtitle="Tailored AI automation solutions designed for how your team actually works."
+        subtitle="Clay-powered GTM systems designed for your ICP and sales motion."
       />
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">

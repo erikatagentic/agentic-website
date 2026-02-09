@@ -20,9 +20,9 @@ export function UseCasesSection() {
     <SectionWrapper id="use-cases">
       <SectionHeading
         id="use-cases-heading"
-        overline="Use Cases"
-        title="Built for your stack."
-        subtitle="AI workflows tailored to every department."
+        overline="Signal Campaigns"
+        title="One signal. One campaign. Meetings booked."
+        subtitle="Each buying signal gets its own Clay workflow and outreach playbook."
       />
 
       <MotionWrapper>

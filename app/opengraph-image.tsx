@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Agentic — AI Workflow Automation";
+export const alt = "Agentic | Clay-Powered GTM Automation";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const runtime = "edge";
@@ -56,7 +56,7 @@ export default async function OGImage() {
             lineHeight: 1.1,
           }}
         >
-          AI Workflow Automation
+          Clay-Powered GTM Automation
         </div>
         <div
           style={{
@@ -67,7 +67,7 @@ export default async function OGImage() {
             maxWidth: 700,
           }}
         >
-          Custom AI pipelines deployed in days, not months.
+          Signals-based outbound systems that generate qualified pipeline.
         </div>
       </div>
     ),

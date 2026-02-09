@@ -24,33 +24,35 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://heyagentic.ai"
   ),
   title: {
-    default: "Agentic — AI Workflow Automation",
+    default: "Agentic | Clay-Powered GTM Automation",
     template: "%s | Agentic",
   },
   description:
-    "Automate your business workflows with AI. Custom pipelines, n8n integrations, and intelligent automation — deployed in days, not months.",
+    "We build signals-based outbound systems on Clay that detect buying intent, enrich prospects, and generate qualified pipeline. Campaigns live in days, not weeks.",
   keywords: [
-    "AI workflow automation",
-    "business process automation",
-    "n8n automation",
-    "AI consulting",
-    "workflow optimization",
-    "AI integrations",
+    "Clay agency",
+    "Claygency",
+    "GTM automation",
+    "signals-based outbound",
+    "buying signals",
+    "pipeline generation",
+    "Clay.com",
+    "outbound automation",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "Agentic",
-    title: "Agentic — AI Workflow Automation",
+    title: "Agentic | Clay-Powered GTM Automation",
     description:
-      "Automate your business workflows with AI. Custom pipelines deployed in days.",
+      "Signals-based outbound systems on Clay that generate qualified pipeline. Campaigns live in days.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agentic — AI Workflow Automation",
+    title: "Agentic | Clay-Powered GTM Automation",
     description:
-      "Automate your business workflows with AI. Custom pipelines deployed in days.",
+      "Signals-based outbound systems on Clay that generate qualified pipeline. Campaigns live in days.",
   },
   robots: { index: true, follow: true },
   icons: {

@@ -12,7 +12,7 @@ export function ProblemSection() {
       <SectionHeading
         id="problem-heading"
         overline="The Problem"
-        title="Your team is drowning in manual work."
+        title="Your outbound is broken."
       />
 
       <div className="grid gap-8 md:grid-cols-3">

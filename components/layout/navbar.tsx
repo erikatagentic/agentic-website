@@ -65,11 +65,10 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2 font-display text-xl font-normal italic tracking-tight"
+          className="flex items-center gap-2"
+          aria-label="Agentic home"
         >
-          <LogoIcon size={28} className="text-primary" />
-          Agentic
-          <span className="text-primary-text">.</span>
+          <LogoIcon size={32} className="text-primary" />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

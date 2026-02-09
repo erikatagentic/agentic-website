@@ -43,8 +43,8 @@ export function HowItWorksSection() {
       <SectionHeading
         id="how-it-works-heading"
         overline="Process"
-        title="From kickoff to production in days."
-        subtitle="A proven 4-step process that gets your AI workflows live fast."
+        title="From kickoff to pipeline in days."
+        subtitle="A proven 4-step process that gets your signal campaigns live fast."
       />
 
       <div className="mx-auto max-w-2xl">
