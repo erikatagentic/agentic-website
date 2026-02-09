@@ -29,7 +29,7 @@ function UseCaseContent({ description, tools, result }: { description: string; t
         ))}
       </div>
       <p className="mt-6 text-sm font-medium">
-        <span className="text-primary-text">{result}</span>
+        <span className="text-primary">{result}</span>
       </p>
     </>
   );

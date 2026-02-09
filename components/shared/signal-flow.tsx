@@ -52,7 +52,7 @@ export function SignalFlow() {
                 className="relative flex flex-col items-center gap-2"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-muted sm:h-12 sm:w-12">
-                  <Icon className="h-5 w-5 text-primary-text sm:h-6 sm:w-6" />
+                  <Icon className="h-5 w-5 text-primary sm:h-6 sm:w-6" />
                 </div>
                 <span className="text-center text-xs font-medium text-foreground-muted sm:text-sm">
                   {step.label}

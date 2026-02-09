@@ -182,7 +182,7 @@ export default function TermsPage() {
                 href={SITE_CONFIG.calLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-primary-text underline transition-colors hover:text-primary-text-hover"
+                className="text-primary underline transition-colors hover:text-primary-hover"
               >
                 {SITE_CONFIG.calLink}
               </a>
