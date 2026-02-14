@@ -8,17 +8,10 @@ import { SITE_CONFIG, NAV_ITEMS } from "@/lib/constants";
 export function Footer() {
   return (
     <footer className="border-t border-border bg-background">
-      {/* Giant wordmark */}
-      <div className="overflow-hidden px-4" aria-hidden="true">
-        <p className="select-none text-center font-display italic text-[8rem] leading-none tracking-tighter text-foreground/5 md:text-[12rem] lg:text-[16rem]">
-          Agentic
-        </p>
-      </div>
-
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-16">
-        <div className="grid gap-8 md:grid-cols-3">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           {/* Brand */}
-          <div>
+          <div className="flex items-center gap-4">
             <Link
               href="/"
               className="flex items-center"
@@ -26,25 +19,20 @@ export function Footer() {
             >
               <LogoIcon size={32} className="text-primary" />
             </Link>
-            <p className="mt-3 text-sm leading-relaxed text-foreground-muted">
-              {SITE_CONFIG.description}
-            </p>
             <a
               href={SITE_CONFIG.linkedIn}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 text-sm text-foreground-muted transition-colors hover:text-foreground"
+              className="text-foreground-muted transition-colors hover:text-foreground"
               aria-label="Agentic on LinkedIn"
             >
-              <Linkedin className="h-4 w-4" />
-              <span>LinkedIn</span>
+              <Linkedin className="h-5 w-5" />
             </a>
           </div>
 
-          {/* Links */}
-          <div>
-            <p className="mb-4 text-sm font-medium">Navigation</p>
-            <nav className="flex flex-col gap-2">
+          {/* Links + CTA */}
+          <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
+            <nav className="flex flex-wrap gap-x-6 gap-y-2">
               {NAV_ITEMS.map((item) => (
                 <Link
                   key={item.href}
@@ -55,11 +43,6 @@ export function Footer() {
                 </Link>
               ))}
             </nav>
-          </div>
-
-          {/* CTA */}
-          <div>
-            <p className="mb-4 text-sm font-medium">Get started</p>
             <Button asChild className="hover:bg-primary-cta-hover">
               <a
                 href={SITE_CONFIG.calLink}

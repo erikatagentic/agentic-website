@@ -20,15 +20,18 @@ export function ServicesSection() {
       <div className="space-y-24 md:space-y-32">
         {SERVICES.map((service, index) => {
           const isReversed = index % 2 !== 0;
+          const textVariant = isReversed ? "slideRight" : "slideLeft";
+          const visualVariant = isReversed ? "slideLeft" : "slideRight";
           return (
-            <MotionWrapper key={service.title} delay={0.1}>
-              <div
-                className={cn(
-                  "grid items-center gap-12 md:grid-cols-2 md:gap-16",
-                  isReversed && "md:[&>*:first-child]:order-2"
-                )}
-              >
-                {/* Text side */}
+            <div
+              key={service.title}
+              className={cn(
+                "grid items-center gap-12 md:grid-cols-2 md:gap-16",
+                isReversed && "md:[&>*:first-child]:order-2"
+              )}
+            >
+              {/* Text side */}
+              <MotionWrapper variant={textVariant}>
                 <div>
                   <AnimatedIconBox>
                     <IconBox icon={service.icon} variant="primary" size="lg" />
@@ -40,10 +43,12 @@ export function ServicesSection() {
                     {service.description}
                   </p>
                 </div>
-                {/* Visual side */}
+              </MotionWrapper>
+              {/* Visual side */}
+              <MotionWrapper variant={visualVariant} delay={0.15}>
                 <ServiceVisual visualId={service.visualId} />
-              </div>
-            </MotionWrapper>
+              </MotionWrapper>
+            </div>
           );
         })}
       </div>

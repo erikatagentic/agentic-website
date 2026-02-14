@@ -300,6 +300,26 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer:
       "An SDR costs $60-80K per year and manually researches 30-50 prospects per day. A Clay-powered signal system monitors thousands of accounts continuously, enriches every match automatically, and triggers personalized outreach around the clock. You get 10x the volume at a fraction of the cost, and your SDRs focus on conversations instead of data entry.",
   },
+  {
+    question: "Do we need our own Clay account?",
+    answer:
+      "Yes. We build everything inside your Clay workspace so you own all the data, workflows, and enrichment credits. If you don't have a Clay account yet, we help you pick the right plan and get set up during onboarding.",
+  },
+  {
+    question: "What results should we expect in the first 30 days?",
+    answer:
+      "Most clients see their first signal-triggered meetings within 2 weeks of launch. By day 30, expect a 2-4x improvement in reply rates compared to your previous cold outbound, plus a steady stream of prospects entering your pipeline from live signal monitoring.",
+  },
+  {
+    question: "Can you work alongside our existing sales team?",
+    answer:
+      "Absolutely. We build the signal detection and enrichment layer. Your SDRs handle the conversations and closing. The system slots into your current CRM and sequencing tools so there is no disruption to existing workflows.",
+  },
+  {
+    question: "What happens if we want to pause or cancel?",
+    answer:
+      "Project-based builds are yours to keep forever. For retainer clients, you can pause or cancel with 30 days notice. All Clay tables, workflows, and documentation stay in your workspace. There are no lock-ins or penalties.",
+  },
 ];
 
 // ── Final CTA ──
