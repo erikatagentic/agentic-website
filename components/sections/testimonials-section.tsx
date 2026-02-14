@@ -15,8 +15,8 @@ export function TestimonialsSection() {
 
       <StaggerGrid className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {TESTIMONIALS.map((testimonial) => (
-          <StaggerItem key={testimonial.author}>
-            <HoverCard>
+          <StaggerItem key={testimonial.author} className="h-full">
+            <HoverCard className="h-full">
               <blockquote className="card-hover-glow flex h-full flex-col rounded-xl border border-border bg-background p-6 md:p-8">
                 <p className="flex-1 text-base leading-relaxed text-foreground-muted">
                   &ldquo;{testimonial.quote}&rdquo;
