@@ -10,7 +10,7 @@ export function SocialProofBar() {
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-display text-4xl font-normal italic tracking-tight text-foreground md:text-5xl">
+                <p className="font-display text-4xl font-normal tracking-tight text-foreground md:text-5xl">
                   {stat.value}
                 </p>
                 <p className="mt-1 text-sm text-foreground-muted">
