@@ -14,14 +14,22 @@ export function FAQSection() {
     <SectionWrapper id="faq">
       <SectionHeading id="faq-heading" overline="FAQ" title="Questions? Answered." />
 
-      <MotionWrapper className="mx-auto max-w-3xl">
-        <Accordion type="single" collapsible className="w-full">
+      <MotionWrapper>
+        <Accordion
+          type="single"
+          collapsible
+          className="grid grid-cols-1 gap-4 md:grid-cols-2"
+        >
           {FAQ_ITEMS.map((item, index) => (
-            <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="py-4 text-left text-base font-medium">
+            <AccordionItem
+              key={index}
+              value={`item-${index}`}
+              className="rounded-xl border border-border border-b-border bg-surface"
+            >
+              <AccordionTrigger className="px-5 py-4 text-left text-base font-medium">
                 {item.question}
               </AccordionTrigger>
-              <AccordionContent className="text-base leading-relaxed text-foreground-muted">
+              <AccordionContent className="px-5 pb-4 text-base leading-relaxed text-foreground-muted">
                 {item.answer}
               </AccordionContent>
             </AccordionItem>

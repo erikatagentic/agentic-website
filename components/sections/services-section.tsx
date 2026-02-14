@@ -2,8 +2,9 @@ import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { IconBox } from "@/components/shared/icon-box";
 import { AnimatedIconBox } from "@/components/shared/animated-icon-box";
-import { HoverCard } from "@/components/shared/hover-card";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { ServiceVisual } from "@/components/shared/service-visual";
+import { cn } from "@/lib/utils";
 import { SERVICES } from "@/lib/constants";
 
 export function ServicesSection() {
@@ -16,24 +17,35 @@ export function ServicesSection() {
         subtitle="Clay-powered GTM systems designed for your ICP and sales motion."
       />
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {SERVICES.map((service, index) => (
-          <MotionWrapper key={service.title} delay={index * 0.1} className="h-full">
-            <HoverCard className="h-full">
-              <div className="card-hover-glow gradient-border-card flex h-full flex-col rounded-xl border border-border bg-surface p-6 md:p-8">
-                <AnimatedIconBox>
-                  <IconBox icon={service.icon} variant="primary" size="lg" />
-                </AnimatedIconBox>
-                <h3 className="mt-4 text-xl font-semibold leading-snug md:text-2xl">
-                  {service.title}
-                </h3>
-                <p className="mt-2 flex-1 text-base leading-relaxed text-foreground-muted">
-                  {service.description}
-                </p>
+      <div className="space-y-24 md:space-y-32">
+        {SERVICES.map((service, index) => {
+          const isReversed = index % 2 !== 0;
+          return (
+            <MotionWrapper key={service.title} delay={0.1}>
+              <div
+                className={cn(
+                  "grid items-center gap-12 md:grid-cols-2 md:gap-16",
+                  isReversed && "md:[&>*:first-child]:order-2"
+                )}
+              >
+                {/* Text side */}
+                <div>
+                  <AnimatedIconBox>
+                    <IconBox icon={service.icon} variant="primary" size="lg" />
+                  </AnimatedIconBox>
+                  <h3 className="mt-6 font-display text-2xl font-normal leading-snug tracking-tight md:text-3xl lg:text-4xl">
+                    {service.title}
+                  </h3>
+                  <p className="mt-4 text-lg leading-relaxed text-foreground-muted">
+                    {service.description}
+                  </p>
+                </div>
+                {/* Visual side */}
+                <ServiceVisual visualId={service.visualId} />
               </div>
-            </HoverCard>
-          </MotionWrapper>
-        ))}
+            </MotionWrapper>
+          );
+        })}
       </div>
     </SectionWrapper>
   );

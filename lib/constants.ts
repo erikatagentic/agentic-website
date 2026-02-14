@@ -127,6 +127,7 @@ export interface ServiceCard {
   icon: LucideIcon;
   title: string;
   description: string;
+  visualId: "workflows" | "integrations" | "intelligence";
 }
 
 export const SERVICES: ServiceCard[] = [
@@ -135,18 +136,21 @@ export const SERVICES: ServiceCard[] = [
     title: "Clay Workflow Automation",
     description:
       "Signal monitoring, enrichment waterfalls, and lead scoring tables built in Clay. We connect 150+ data providers and route qualified prospects directly into your sequences.",
+    visualId: "workflows",
   },
   {
     icon: Radar,
     title: "GTM Data Infrastructure",
     description:
       "ICP definition, CRM enrichment, and account scoring pipelines. Clean data in, qualified leads out. We integrate Clay with HubSpot, Salesforce, and your existing stack.",
+    visualId: "integrations",
   },
   {
     icon: Mail,
     title: "Outbound Campaign Design",
     description:
       "Signals-based campaigns that pair the right trigger with the right message. Funding rounds, job changes, hiring surges, tech stack shifts. Each signal gets its own playbook.",
+    visualId: "intelligence",
   },
 ];
 
