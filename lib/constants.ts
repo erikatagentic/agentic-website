@@ -217,7 +217,7 @@ export const TESTIMONIALS: Testimonial[] = [
     quote:
       "Our funding signal campaign books 12 meetings per month on autopilot. Agentic connected Clay, HubSpot, and our email platform into one system that runs without us touching it.",
     author: "Elena Vasquez",
-    role: "Director of Sales Development",
+    role: "Director of Sales",
     company: "Canopy Financial",
   },
 ];
