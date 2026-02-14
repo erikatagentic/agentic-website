@@ -11,7 +11,7 @@ import { FAQ_ITEMS } from "@/lib/constants";
 
 export function FAQSection() {
   return (
-    <SectionWrapper id="faq" variant="surface">
+    <SectionWrapper id="faq">
       <SectionHeading id="faq-heading" overline="FAQ" title="Questions? Answered." />
 
       <MotionWrapper className="mx-auto max-w-3xl">

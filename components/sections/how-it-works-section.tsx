@@ -39,7 +39,7 @@ export function HowItWorksSection() {
   const reducedMotion = useReducedMotion();
 
   return (
-    <SectionWrapper id="how-it-works" variant="surface">
+    <SectionWrapper id="how-it-works">
       <SectionHeading
         id="how-it-works-heading"
         overline="Process"

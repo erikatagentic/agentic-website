@@ -66,7 +66,7 @@ export function UseCasesSection() {
   );
 
   return (
-    <SectionWrapper id="use-cases">
+    <SectionWrapper id="use-cases" variant="surface-raised">
       <SectionHeading
         id="use-cases-heading"
         overline="Signal Campaigns"

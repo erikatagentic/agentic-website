@@ -8,7 +8,7 @@ import { SERVICES } from "@/lib/constants";
 
 export function ServicesSection() {
   return (
-    <SectionWrapper id="services">
+    <SectionWrapper id="services" variant="surface-raised">
       <SectionHeading
         id="services-heading"
         overline="Our Services"

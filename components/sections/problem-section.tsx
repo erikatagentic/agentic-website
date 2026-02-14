@@ -8,7 +8,7 @@ import { PAIN_POINTS } from "@/lib/constants";
 
 export function ProblemSection() {
   return (
-    <SectionWrapper id="problem">
+    <SectionWrapper id="problem" variant="surface">
       <SectionHeading
         id="problem-heading"
         overline="The Problem"
