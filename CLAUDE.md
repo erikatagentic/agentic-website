@@ -5,6 +5,15 @@
 
 ---
 
+## Workflow Rules
+
+- **Auto-commit**: Commit after every meaningful change (new feature, fix, or update). Do not batch multiple unrelated changes into one commit.
+- **Auto-push**: Push to remote after every commit. Always `git push` immediately after committing.
+- **Auto-update docs**: After making changes, automatically update this CLAUDE.md and session MEMORY.md without being asked. The user should never have to remind you to document.
+- **Plans before execution**: For multi-step or ambiguous tasks, present a comprehensive plan before writing code. Get approval first.
+
+---
+
 ## 1. Project Overview
 
 | Field | Value |
@@ -356,6 +365,7 @@ Single landing page: `app/page.tsx`. All sections rendered sequentially. Each se
 | 9 | `#use-cases` | `UseCasesSection` | Title: "Built for your stack." Tabbed: Sales Ops, Customer Support, Finance, Engineering |
 | 10 | `#faq` | `FAQSection` | Title: "Questions? Answered." 6 accordion items using shadcn Accordion |
 | 11 | `#cta` | `FinalCTASection` | Full-width gradient bg. Headline: "Ready to automate?" Primary CTA + reassurance text |
+| 12 | — | `not-found.tsx` | Branded 404: headline, subtext, "Go Home" + primary CTA buttons |
 
 ### Navigation
 
@@ -382,6 +392,7 @@ agentic-website/
 │   ├── globals.css              # Tailwind v4 + color tokens
 │   ├── layout.tsx               # Root layout (fonts, metadata)
 │   ├── page.tsx                 # Landing page (all sections)
+│   ├── not-found.tsx            # Custom branded 404
 │   ├── opengraph-image.tsx      # Dynamic OG image
 │   └── sitemap.ts               # Sitemap generation
 ├── components/
@@ -495,6 +506,8 @@ interface AnimatedCounterProps {
 6. **External links:** All Cal.com links use `target="_blank" rel="noopener noreferrer"`.
 7. **Value before ask:** Never show a CTA without first presenting a value proposition. Flow: pain → solution → proof → ask.
 8. **Contrast hierarchy:** Primary CTA must be the highest-contrast element. Nothing else uses `bg-primary-cta`.
+9. **Trust signals near pricing:** Include reassurance text ("No long-term contracts", "Cancel anytime", "No commitment") directly below pricing CTAs. Reduces friction.
+10. **Comparison tables before final CTA:** If the business has competitors or alternatives, a comparison table (Us vs. Them vs. DIY) placed before the final CTA handles objections and pushes conversion.
 
 ---
 
@@ -515,6 +528,20 @@ interface AnimatedCounterProps {
 - Format: WebP or AVIF. `quality={85}`.
 - Always set `sizes` attribute.
 - Above-fold: `priority` prop. All others: lazy load (default).
+
+### Video Embed Performance (YouTube Facade)
+
+Never auto-load YouTube iframes. Use a facade pattern:
+
+1. Show a static thumbnail image + play button overlay
+2. On click, replace with the actual `<iframe>` (`autoplay=1`)
+3. This saves ~500KB+ of initial page weight per embed
+
+```tsx
+const [playing, setPlaying] = useState(false);
+// When !playing: <Image> with play button overlay
+// When playing: <iframe src="...?autoplay=1">
+```
 
 ### Font Loading
 
@@ -585,6 +612,52 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 }
 ```
+
+### JSON-LD Structured Data
+
+Add inline in `layout.tsx` body for rich search results:
+
+```tsx
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: SITE_CONFIG.name,
+      url: SITE_CONFIG.url,
+      description: SITE_CONFIG.description,
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "sales",
+        url: SITE_CONFIG.calLink,
+      },
+    }),
+  }}
+/>
+```
+
+### Security Headers
+
+Configure in `next.config.ts`:
+
+```typescript
+async headers() {
+  return [
+    {
+      source: "/(.*)",
+      headers: [
+        { key: "X-Frame-Options", value: "DENY" },
+        { key: "X-Content-Type-Options", value: "nosniff" },
+        { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        { key: "Content-Security-Policy", value: "frame-ancestors 'none'" },
+      ],
+    },
+  ];
+},
+```
+
+Extend the CSP `script-src` directive if adding analytics (Google Tag Manager, etc.) or embeds (YouTube iframes need `frame-src`).
 
 ---
 
@@ -1264,6 +1337,30 @@ export default async function OGImage() {
 - Accent: violet radial glow
 - Runtime: Edge (no external deps)
 - Fallback: static `public/og-default.png`
+
+---
+
+## 17. User Preferences
+
+These apply across all of Erik's projects:
+
+- **"Co-Founder"** not "Co-founder" (always capitalize both words)
+- **Limit em dashes** — use sparingly, prefer periods or commas
+- **Concise copy** — trim wordiness, every word must earn its place
+- **Plans before execution** — present comprehensive plans before multi-step work
+- **No invented data** — never fabricate testimonials, stats, or client names. Use only what's in `constants.ts`
+- **Auto-update docs** — always update CLAUDE.md and MEMORY.md after making changes without being asked
+
+---
+
+## 18. Gotchas & Known Issues
+
+- **robots.txt in dev**: Next.js metadata API `robots.ts` only works in production builds (`next build && next start`). The dev server returns 404 for `/robots.txt`. This is expected.
+- **OG images in dev**: `opengraph-image.tsx` renders correctly in production but may show stale/cached versions locally. Test with `next build && next start`.
+- **Framer Motion + SSR**: Components using `motion.*` must be in `"use client"` files. Server Components cannot use Framer Motion directly.
+- **Tailwind v4 `@theme`**: Color tokens must be registered in the `@theme inline {}` block to be usable as Tailwind classes (e.g., `bg-surface`, `text-primary`).
+- **WCAG AA dual-accent trap**: A single accent color cannot pass 4.5:1 contrast in both directions (text-on-dark AND white-on-accent) at dark background levels. Always use two tokens: one for text, one for button backgrounds.
+- **next/image mixed formats**: Verify actual file types with `file` command. A `.png` extension may contain SVG or WebP data. Use correct extensions.
 
 ---
 
