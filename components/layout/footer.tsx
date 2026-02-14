@@ -7,8 +7,15 @@ import { SITE_CONFIG, NAV_ITEMS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background py-16">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-border bg-background">
+      {/* Giant wordmark */}
+      <div className="overflow-hidden px-4" aria-hidden="true">
+        <p className="select-none text-center font-display italic text-[8rem] leading-none tracking-tighter text-foreground/5 md:text-[12rem] lg:text-[16rem]">
+          Agentic
+        </p>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pb-16">
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
           <div>
