@@ -47,9 +47,10 @@ function ParallaxBlob({
     offset: ["start end", "end start"],
   });
   const y = useTransform(scrollYProgress, [0, 1], [0, -(speed * 200)]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.05, 0.95]);
 
   return (
-    <motion.div ref={ref} style={{ y }} className={className} aria-hidden="true" />
+    <motion.div ref={ref} style={{ y, scale }} className={className} aria-hidden="true" />
   );
 }
 

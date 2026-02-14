@@ -1,7 +1,7 @@
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { SectionHeading } from "@/components/shared/section-heading";
 import { HoverCard } from "@/components/shared/hover-card";
-import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { StaggerGrid, StaggerItem } from "@/components/shared/stagger-grid";
 import { TESTIMONIALS } from "@/lib/constants";
 
 export function TestimonialsSection() {
@@ -13,9 +13,9 @@ export function TestimonialsSection() {
         title="What our clients say."
       />
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {TESTIMONIALS.map((testimonial, index) => (
-          <MotionWrapper key={testimonial.author} delay={index * 0.1}>
+      <StaggerGrid className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {TESTIMONIALS.map((testimonial) => (
+          <StaggerItem key={testimonial.author}>
             <HoverCard>
               <blockquote className="card-hover-glow flex h-full flex-col rounded-xl border border-border bg-background p-6 md:p-8">
                 <p className="flex-1 text-base leading-relaxed text-foreground-muted">
@@ -29,9 +29,9 @@ export function TestimonialsSection() {
                 </div>
               </blockquote>
             </HoverCard>
-          </MotionWrapper>
+          </StaggerItem>
         ))}
-      </div>
+      </StaggerGrid>
     </SectionWrapper>
   );
 }

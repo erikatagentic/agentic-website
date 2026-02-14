@@ -29,3 +29,27 @@ export const staggerContainer = {
     },
   },
 };
+
+// Cinematic easing -- smooth overshoot curve for premium feel
+export const cinematicEase = [0.22, 1, 0.36, 1] as const;
+
+// Pre-cast mutable copy for Framer Motion's ease prop
+export const cinematicEaseMutable: [number, number, number, number] = [...cinematicEase];
+
+export const cinematicFadeUp = {
+  initial: { opacity: 0, y: 32 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.65, ease: cinematicEase },
+};
+
+export const slideFromLeft = {
+  initial: { opacity: 0, x: -40 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.6, ease: cinematicEase },
+};
+
+export const slideFromRight = {
+  initial: { opacity: 0, x: 40 },
+  animate: { opacity: 1, x: 0 },
+  transition: { duration: 0.6, ease: cinematicEase },
+};
