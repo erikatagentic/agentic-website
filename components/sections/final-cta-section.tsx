@@ -20,12 +20,12 @@ export function FinalCTASection() {
         color="violet"
         parallax
         parallaxSpeed={0.2}
-        className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40"
+        className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60"
       />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <MotionWrapper className="mx-auto max-w-2xl text-center">
-          <h2 id="cta-heading" className="font-display text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
+          <h2 id="cta-heading" className="font-display text-4xl font-normal leading-[1.15] tracking-tight md:text-5xl lg:text-6xl">
             {FINAL_CTA.headline}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-foreground-muted md:text-xl">
@@ -36,6 +36,9 @@ export function FinalCTASection() {
               {FINAL_CTA.cta}
             </CTAButton>
           </div>
+          <p className="mt-4 text-sm text-foreground-subtle">
+            {FINAL_CTA.note}
+          </p>
         </MotionWrapper>
       </div>
     </section>
