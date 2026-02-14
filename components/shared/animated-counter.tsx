@@ -19,8 +19,8 @@ export function AnimatedCounter({
   label,
 }: AnimatedCounterProps) {
   const reducedMotion = useReducedMotion();
-  const [count, setCount] = useState(reducedMotion ? target : 0);
-  const hasAnimatedRef = useRef(reducedMotion);
+  const [count, setCount] = useState(target);
+  const hasAnimatedRef = useRef(false);
   const ref = useRef<HTMLDivElement>(null);
 
   const startAnimation = useCallback(() => {
@@ -48,6 +48,7 @@ export function AnimatedCounter({
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimatedRef.current) {
           hasAnimatedRef.current = true;
+          setCount(0);
           startAnimation();
         }
       },

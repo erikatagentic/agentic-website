@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Linkedin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { LogoIcon } from "@/components/shared/logo-icon";
@@ -11,24 +10,13 @@ export function Footer() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           {/* Brand */}
-          <div className="flex items-center gap-4">
-            <Link
-              href="/"
-              className="flex items-center"
-              aria-label="Agentic home"
-            >
-              <LogoIcon size={32} className="text-primary" />
-            </Link>
-            <a
-              href={SITE_CONFIG.linkedIn}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-foreground-muted transition-colors hover:text-foreground"
-              aria-label="Agentic on LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
-            </a>
-          </div>
+          <Link
+            href="/"
+            className="flex items-center"
+            aria-label="Agentic home"
+          >
+            <LogoIcon size={32} className="text-primary" />
+          </Link>
 
           {/* Links + CTA */}
           <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">

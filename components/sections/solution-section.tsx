@@ -7,7 +7,7 @@ export function SolutionSection() {
   return (
     <SectionWrapper id="solution" variant="surface">
       <MotionWrapper className="mx-auto max-w-3xl text-center">
-        <h2 id="solution-heading" className="font-display text-3xl font-normal leading-[1.15] tracking-tight md:text-4xl lg:text-5xl">
+        <h2 id="solution-heading" className="font-display text-4xl font-normal leading-[1.15] tracking-tight md:text-5xl lg:text-6xl">
           {SOLUTION.title}
         </h2>
         <p className="mt-6 text-lg leading-relaxed text-foreground-muted md:text-xl">
