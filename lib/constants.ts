@@ -32,6 +32,13 @@ export const SITE_CONFIG = {
   linkedIn: "https://www.linkedin.com/company/heyagentic",
 } as const;
 
+// ── Headline Parts ──
+
+export interface HeadlinePart {
+  text: string;
+  italic: boolean;
+}
+
 // ── Navigation ──
 
 export interface NavItem {
@@ -50,6 +57,10 @@ export const NAV_ITEMS: NavItem[] = [
 
 export const HERO = {
   headline: "Turn buying signals into booked meetings",
+  headlineParts: [
+    { text: "Turn buying signals into ", italic: false },
+    { text: "booked meetings", italic: true },
+  ] as const,
   subheadline:
     "We build Clay-powered outbound systems that detect funding rounds, job changes, and hiring surges, then convert them into qualified pipeline.",
   primaryCta: "Book a Demo",

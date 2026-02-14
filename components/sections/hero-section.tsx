@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { CTAButton } from "@/components/shared/cta-button";
 import { GradientBlob } from "@/components/shared/gradient-blob";
 import { SignalFlow } from "@/components/shared/signal-flow";
+import { AnimatedUnderline } from "@/components/shared/animated-underline";
 import { easeOutQuadMutable } from "@/lib/motion";
 import { HERO, SITE_CONFIG } from "@/lib/constants";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -72,7 +73,19 @@ export function HeroSection() {
             {...(!reducedMotion && { variants: itemVariants })}
           >
             <h1 className="font-display text-5xl font-normal leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
-              {HERO.headline}
+              {HERO.headlineParts.map((part, i) =>
+                part.italic ? (
+                  <span key={i} className="relative inline-block">
+                    <em className="italic">{part.text}</em>
+                    <AnimatedUnderline
+                      className="absolute -bottom-2 left-0 w-full md:-bottom-3"
+                      delay={1}
+                    />
+                  </span>
+                ) : (
+                  <span key={i}>{part.text}</span>
+                )
+              )}
             </h1>
           </Item>
 
