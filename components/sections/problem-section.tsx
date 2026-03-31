@@ -15,7 +15,7 @@ export function ProblemSection() {
         title="Your outbound is broken."
       />
 
-      <StaggerGrid className="grid gap-8 md:grid-cols-3">
+      <StaggerGrid className="grid gap-6 md:gap-8 md:grid-cols-3">
         {PAIN_POINTS.map((point) => (
           <StaggerItem key={point.title} className="h-full">
             <HoverCard className="h-full">

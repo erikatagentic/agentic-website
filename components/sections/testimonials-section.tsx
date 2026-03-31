@@ -13,7 +13,7 @@ export function TestimonialsSection() {
         title="What our clients say."
       />
 
-      <StaggerGrid className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <StaggerGrid className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
         {TESTIMONIALS.map((testimonial) => (
           <StaggerItem key={testimonial.author} className="h-full">
             <HoverCard className="h-full">

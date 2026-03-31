@@ -177,6 +177,17 @@
   transform: scale(0.98);
 }
 
+@media (pointer: coarse) {
+  .cta-glow {
+    animation: none;
+    box-shadow: 0 0 15px hsl(255 92% 76% / 0.15);
+  }
+
+  .animate-blob-drift {
+    animation: none;
+  }
+}
+
 .animate-blob-drift {
   animation: blob-drift 12s ease-in-out infinite;
 }

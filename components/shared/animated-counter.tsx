@@ -68,7 +68,7 @@ export function AnimatedCounter({
       className="text-center"
       aria-label={`${prefix}${target}${suffix} ${label}`}
     >
-      <p className="font-display text-4xl font-normal italic tracking-tight text-foreground md:text-5xl">
+      <p className="font-display text-3xl font-normal italic tracking-tight text-foreground sm:text-4xl md:text-5xl">
         {prefix}
         {count}
         {suffix}

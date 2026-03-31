@@ -17,7 +17,7 @@ export function ServicesSection() {
         subtitle="Clay-powered GTM systems designed for your ICP and sales motion."
       />
 
-      <div className="space-y-24 md:space-y-32">
+      <div className="space-y-16 md:space-y-32">
         {SERVICES.map((service, index) => {
           const isReversed = index % 2 !== 0;
           const textVariant = isReversed ? "slideRight" : "slideLeft";

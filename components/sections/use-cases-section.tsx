@@ -92,7 +92,7 @@ export function UseCasesSection() {
               tabIndex={activeTab === index ? 0 : -1}
               onClick={() => setActiveTab(index)}
               className={cn(
-                "rounded-full px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                "inline-flex items-center rounded-full px-4 py-2 text-sm font-medium min-h-[44px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 activeTab === index
                   ? "bg-primary text-primary-foreground"
                   : "bg-surface-raised text-foreground-muted hover:text-foreground"

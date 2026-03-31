@@ -7,10 +7,10 @@ export function SocialProofBar() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 id="social-proof-heading" className="sr-only">Key results at a glance</h2>
         <MotionWrapper>
-          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+          <div className="grid grid-cols-2 gap-4 sm:gap-8 md:grid-cols-4">
             {STATS.map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="font-display text-4xl font-normal tracking-tight text-foreground md:text-5xl">
+                <p className="font-display text-3xl font-normal tracking-tight text-foreground sm:text-4xl md:text-5xl">
                   {stat.value}
                 </p>
                 <p className="mt-1 text-sm text-foreground-muted">

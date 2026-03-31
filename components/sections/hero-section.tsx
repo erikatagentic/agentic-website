@@ -72,7 +72,7 @@ export function HeroSection() {
           <Item
             {...(!reducedMotion && { variants: itemVariants })}
           >
-            <h1 className="font-display text-5xl font-normal leading-[1.1] tracking-tight md:text-6xl lg:text-7xl">
+            <h1 className="font-display text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               {HERO.headlineParts.map((part, i) =>
                 part.italic ? (
                   <span key={i} className="relative inline-block">
@@ -101,7 +101,7 @@ export function HeroSection() {
             {...(!reducedMotion && { variants: itemVariants })}
           >
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <CTAButton variant="primary" size="lg" href={SITE_CONFIG.calLink}>
+              <CTAButton variant="primary" size="lg" href={SITE_CONFIG.calLink} className="w-full sm:w-auto">
                 {HERO.primaryCta}
               </CTAButton>
               <CTAButton
@@ -109,6 +109,7 @@ export function HeroSection() {
                 size="lg"
                 href={HERO.secondaryCtaHref}
                 external={false}
+                className="w-full sm:w-auto"
               >
                 {HERO.secondaryCta}
               </CTAButton>

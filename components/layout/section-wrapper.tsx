@@ -18,7 +18,7 @@ export function SectionWrapper({
       id={id}
       aria-labelledby={`${id}-heading`}
       className={cn(
-        "relative py-24 md:py-32",
+        "relative py-16 md:py-32",
         variant === "surface" && "bg-surface",
         variant === "surface-raised" && "bg-surface-raised",
         variant === "gradient" &&
