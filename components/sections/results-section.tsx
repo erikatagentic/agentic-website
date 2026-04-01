@@ -18,9 +18,7 @@ export function ResultsSection() {
         />
 
         <MotionWrapper>
-          <div className="relative grid grid-cols-2 gap-4 sm:gap-8 md:grid-cols-4">
-            <AnimatedCounter target={200} suffix="+" label="Campaigns Deployed" />
-            <AnimatedCounter target={35} suffix="+" label="GTM Teams Served" />
+          <div className="relative flex flex-wrap justify-center gap-8 sm:gap-16">
             <AnimatedCounter target={4} suffix="x" label="Avg. Reply Rate Lift" />
             <AnimatedCounter target={12} label="Days to First Meetings" />
           </div>

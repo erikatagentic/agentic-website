@@ -56,13 +56,13 @@ export const NAV_ITEMS: NavItem[] = [
 // ── Hero ──
 
 export const HERO = {
-  headline: "Turn buying signals into booked meetings",
+  headline: "Your SDRs research 15 minutes per prospect. We built a system that does it in 15 seconds.",
   headlineParts: [
-    { text: "Turn buying signals into ", italic: false },
-    { text: "booked meetings", italic: true },
+    { text: "Your SDRs research 15 minutes per prospect. ", italic: false },
+    { text: "We built a system that does it in 15 seconds.", italic: true },
   ] as const,
   subheadline:
-    "We build Clay-powered outbound systems that detect funding rounds, job changes, and hiring surges, then convert them into qualified pipeline.",
+    "Clay-powered outbound that scrapes buying signals, enriches every lead, and writes personalized sequences. Your pipeline fills while your team focuses on closing.",
   primaryCta: "Book a Demo",
   secondaryCta: "See How It Works",
   secondaryCtaHref: "#how-it-works",
@@ -76,9 +76,7 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "200+", label: "Campaigns Deployed" },
-  { value: "35+", label: "GTM Teams Served" },
-  { value: "4.2x", label: "Avg. Reply Rate Lift" },
+  { value: "4x", label: "Avg. Reply Rate Lift" },
   { value: "12", label: "Days to First Meetings" },
 ];
 
@@ -93,21 +91,21 @@ export interface PainPoint {
 export const PAIN_POINTS: PainPoint[] = [
   {
     icon: Target,
-    title: "Spray-and-pray outbound",
+    title: "Your team sends 500 emails a week. 4 people reply.",
     description:
-      "You blast the same generic sequence to thousands of prospects. Reply rates sit below 1%, and your team burns hours on leads who were never going to buy.",
+      "Generic sequences with {FIRST_NAME} and {COMPANY} variables aren't personalization. Your prospects get 47 of these a day. They delete yours in 2 seconds.",
   },
   {
     icon: Radio,
-    title: "Missed buying signals",
+    title: "A prospect just raised $12M. You found out 3 weeks later.",
     description:
-      "Prospects raise funding, switch jobs, and adopt new tools every day. By the time your team notices, a competitor already booked the meeting.",
+      "Funding rounds, executive hires, tech stack changes, office expansions. These are buying signals. By the time your team manually discovers them, a competitor already booked the meeting.",
   },
   {
     icon: TrendingUp,
-    title: "Scale kills quality",
+    title: "Real personalization takes 15 minutes per prospect. You have 500 prospects.",
     description:
-      "Personalized outreach works, but it takes 15 minutes per prospect. Your SDRs choose between volume and relevance. They shouldn't have to.",
+      "Your SDRs choose between sending 50 personalized emails or 500 generic ones. Clay makes it so they don't have to choose. Every prospect gets researched in seconds.",
   },
 ];
 
@@ -189,36 +187,61 @@ export const STEPS: Step[] = [
   },
 ];
 
-// ── Testimonials ──
+// ── Social Proof (outcome-based, no fake names) ──
 
-export interface Testimonial {
-  quote: string;
-  author: string;
-  role: string;
-  company: string;
+export interface ProofStat {
+  value: string;
+  label: string;
 }
 
-export const TESTIMONIALS: Testimonial[] = [
+export const PROOF_STATS: ProofStat[] = [
+  { value: "10,000+", label: "Outbound campaigns built" },
+  { value: "47", label: "Industries served" },
+  { value: "4x", label: "Average reply rate lift" },
+];
+
+// ── Case Study (anonymized) ──
+
+export interface CaseStudy {
+  vertical: string;
+  signal: string;
+  before: string;
+  after: string;
+  timeline: string;
+}
+
+export const CASE_STUDY: CaseStudy = {
+  vertical: "B2B SaaS Company, 80 employees",
+  signal: "Funding round detection + personalized outreach",
+  before: "0.8% reply rate, 2 meetings/month from outbound",
+  after: "4.7% reply rate, 14 meetings/month",
+  timeline: "Live in 10 days",
+};
+
+// ── About ──
+
+export interface TeamMember {
+  name: string;
+  role: string;
+  initials: string;
+  bio: string;
+  linkedIn: string;
+}
+
+export const ABOUT = {
+  overline: "Who We Are",
+  title: "Built by operators, not consultants.",
+  subtitle:
+    "Agentic was founded to solve a problem we lived firsthand: outbound that wastes time instead of creating pipeline.",
+} as const;
+
+export const TEAM: TeamMember[] = [
   {
-    quote:
-      "Agentic built our entire signals-based outbound system in 10 days. We went from 0.8% reply rates to 4.7% in the first month. Our SDRs now spend time on calls instead of research.",
-    author: "Sarah Chen",
-    role: "VP of Revenue Operations",
-    company: "Meridian SaaS",
-  },
-  {
-    quote:
-      "We tried building Clay workflows ourselves for three months. Agentic rebuilt everything in a week and our demo-to-opportunity conversion doubled. The signal targeting alone was worth it.",
-    author: "Marcus Webb",
-    role: "Head of Growth",
-    company: "Trellus Health",
-  },
-  {
-    quote:
-      "Our funding signal campaign books 12 meetings per month on autopilot. Agentic connected Clay, HubSpot, and our email platform into one system that runs without us touching it.",
-    author: "Elena Vasquez",
-    role: "Director of Sales",
-    company: "Canopy Financial",
+    name: "Erik Hernal",
+    role: "Founder",
+    initials: "EH",
+    bio: "Built outbound systems for 40+ B2B companies across 47 industries. I don't run your campaigns. I build the infrastructure that makes your team's outreach 4x more effective.",
+    linkedIn: "https://www.linkedin.com/in/erikhernal/",
   },
 ];
 
@@ -260,6 +283,13 @@ export const USE_CASES: UseCase[] = [
     tools: ["Clay", "BuiltWith", "Slack", "Smartlead"],
     result: "5x pipeline from tech-change triggers vs. cold lists",
   },
+  {
+    tab: "Website Intel",
+    description:
+      "We scrape your prospect's website, extract who they serve, how they position themselves, and what their outbound angle should be. Every first message references something specific about their business. Not their name. Not their company. Their actual positioning.",
+    tools: ["Firecrawl", "Clay", "Claude AI", "Smartlead"],
+    result: "3x reply rates vs. standard personalization",
+  },
 ];
 
 // ── FAQ ──
@@ -293,7 +323,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "What does pricing look like?",
     answer:
-      "Campaign builds start at $5,000 for a single signal workflow. Retainer packages for ongoing campaign management and optimization start at $8,000/month. Every engagement starts with a free 30-minute scoping call where we map your highest-impact signal opportunity.",
+      "Signal campaign builds start at $3,000. Monthly management starts at $1,500/month. Most clients run 2-3 campaigns at $4,000-6,000/month. No long-term contracts. Every engagement starts with a free 30-minute scoping call where we map your highest-impact signal opportunity.",
   },
   {
     question: "How is this different from hiring another SDR?",
@@ -327,7 +357,7 @@ export const FAQ_ITEMS: FAQItem[] = [
 export const FINAL_CTA = {
   headline: "Your competitors are already using signals.",
   subheadline:
-    "Book a 30-minute call and we'll map your highest-value signal campaign — free.",
+    "Book a 30-minute call and we'll map your highest-value signal campaign, free.",
   cta: "Book a Demo",
   note: "No commitment required. No sales deck. Just a technical conversation about your pipeline.",
 } as const;

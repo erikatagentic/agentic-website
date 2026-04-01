@@ -5,8 +5,9 @@ import { SolutionSection } from "@/components/sections/solution-section";
 import { ServicesSection } from "@/components/sections/services-section";
 import { HowItWorksSection } from "@/components/sections/how-it-works-section";
 import { ResultsSection } from "@/components/sections/results-section";
-import { TestimonialsSection } from "@/components/sections/testimonials-section";
+import { SocialProofSection } from "@/components/sections/social-proof-section";
 import { UseCasesSection } from "@/components/sections/use-cases-section";
+import { AboutSection } from "@/components/sections/about-section";
 import { FAQSection } from "@/components/sections/faq-section";
 import { FinalCTASection } from "@/components/sections/final-cta-section";
 import { MobileStickyCTA } from "@/components/layout/mobile-sticky-cta";
@@ -22,8 +23,9 @@ export default function Home() {
         <ServicesSection />
         <HowItWorksSection />
         <ResultsSection />
-        <TestimonialsSection />
+        <SocialProofSection />
         <UseCasesSection />
+        <AboutSection />
         <FAQSection />
         <FinalCTASection />
       </main>
