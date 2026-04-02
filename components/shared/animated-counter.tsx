@@ -70,7 +70,7 @@ export function AnimatedCounter({
     >
       <p className="font-display text-3xl font-normal italic tracking-tight text-foreground sm:text-4xl md:text-5xl">
         {prefix}
-        {count}
+        {count.toLocaleString()}
         {suffix}
       </p>
       <p className="mt-2 text-sm text-foreground-muted">{label}</p>
