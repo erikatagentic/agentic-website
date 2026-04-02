@@ -59,18 +59,18 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://heyagentic.ai"
   ),
   title: {
-    default: "Agentic | Clay-Powered GTM Automation",
+    default: "Agentic | GTM Engineering for B2B Teams",
     template: "%s | Agentic",
   },
   description:
-    "We build signals-based outbound systems on Clay that detect buying intent, enrich prospects, and generate qualified pipeline. Campaigns live in days, not weeks.",
+    "Fixed-scope projects that build enrichment waterfalls, signal detection, and outbound campaign infrastructure. $750-4,000. Delivered in days.",
   keywords: [
-    "Clay agency",
-    "Claygency",
-    "GTM automation",
-    "signals-based outbound",
-    "buying signals",
-    "pipeline generation",
+    "GTM engineering",
+    "Clay workflows",
+    "enrichment waterfall",
+    "signal detection",
+    "outbound infrastructure",
+    "B2B outbound",
     "Clay.com",
     "outbound automation",
   ],
@@ -78,16 +78,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Agentic",
-    title: "Agentic | Clay-Powered GTM Automation",
+    title: "Agentic | GTM Engineering for B2B Teams",
     description:
-      "Signals-based outbound systems on Clay that generate qualified pipeline. Campaigns live in days.",
+      "Fixed-scope projects that build enrichment waterfalls, signal detection, and outbound infrastructure. $750-4,000. Delivered in days.",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Agentic | Clay-Powered GTM Automation",
+    title: "Agentic | GTM Engineering for B2B Teams",
     description:
-      "Signals-based outbound systems on Clay that generate qualified pipeline. Campaigns live in days.",
+      "Fixed-scope projects that build enrichment waterfalls, signal detection, and outbound infrastructure. $750-4,000. Delivered in days.",
   },
   robots: { index: true, follow: true },
   icons: {

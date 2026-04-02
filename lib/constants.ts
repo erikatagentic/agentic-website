@@ -1,10 +1,7 @@
 import {
-  Target,
-  Radio,
-  TrendingUp,
-  Database,
-  Radar,
-  Mail,
+  DollarSign,
+  Lock,
+  Clock,
   type LucideIcon,
 } from "lucide-react";
 
@@ -24,9 +21,9 @@ export const BRAND_COLORS = {
 
 export const SITE_CONFIG = {
   name: "Agentic",
-  tagline: "Clay-Powered GTM Automation",
+  tagline: "GTM Engineering for B2B Teams",
   description:
-    "We build signals-based outbound systems on Clay that detect buying intent, enrich prospects, and generate qualified pipeline. Campaigns live in days, not weeks.",
+    "Fixed-scope projects that build enrichment waterfalls, signal detection, and outbound campaign infrastructure. $750-4,000. Delivered in days.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://heyagentic.ai",
   calLink: process.env.NEXT_PUBLIC_CAL_LINK || "https://tidycal.com/heyagentic/30-minutes",
   linkedIn: "https://www.linkedin.com/company/heyagentic",
@@ -47,8 +44,8 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
+  { label: "Pricing", href: "#pricing" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Services", href: "#services" },
   { label: "Results", href: "#results" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -56,16 +53,16 @@ export const NAV_ITEMS: NavItem[] = [
 // ── Hero ──
 
 export const HERO = {
-  headline: "Your SDRs research 15 minutes per prospect. We built a system that does it in 15 seconds.",
+  headline: "Your outbound infrastructure. Built in days, not months.",
   headlineParts: [
-    { text: "Your SDRs research 15 minutes per prospect. ", italic: false },
-    { text: "We built a system that does it in 15 seconds.", italic: true },
+    { text: "Your outbound infrastructure. ", italic: false },
+    { text: "Built in days, not months.", italic: true },
   ] as const,
   subheadline:
-    "Clay-powered outbound that scrapes buying signals, enriches every lead, and writes personalized sequences. Your pipeline fills while your team focuses on closing.",
-  primaryCta: "Book a Demo",
-  secondaryCta: "See How It Works",
-  secondaryCtaHref: "#how-it-works",
+    "Fixed-scope projects that build enrichment waterfalls, signal detection, and personalized outbound systems. Pick a project, get it delivered, own the system.",
+  primaryCta: "See the Menu",
+  primaryCtaHref: "#pricing",
+  secondaryCta: "Book a Call",
 } as const;
 
 // ── Stats ──
@@ -76,8 +73,9 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "4x", label: "Avg. Reply Rate Lift" },
-  { value: "12", label: "Days to First Meetings" },
+  { value: "10,000+", label: "Campaigns of data powering every build" },
+  { value: "4x", label: "Average reply rate lift" },
+  { value: "3-10", label: "Days from kickoff to live system" },
 ];
 
 // ── Problem ──
@@ -90,65 +88,110 @@ export interface PainPoint {
 
 export const PAIN_POINTS: PainPoint[] = [
   {
-    icon: Target,
-    title: "Your team sends 500 emails a week. 4 people reply.",
+    icon: DollarSign,
+    title: "A full-time GTM engineer costs $135K/year.",
     description:
-      "Generic sequences with {FIRST_NAME} and {COMPANY} variables aren't personalization. Your prospects get 47 of these a day. They delete yours in 2 seconds.",
+      "And takes 3 months to ramp. You don't need a full-time hire. You need the specific system built. Enrichment waterfall, signal detection, campaign infrastructure. Scoped, delivered, done.",
   },
   {
-    icon: Radio,
-    title: "A prospect just raised $12M. You found out 3 weeks later.",
+    icon: Lock,
+    title: "Agency retainers lock you in for $4-8K/month.",
     description:
-      "Funding rounds, executive hires, tech stack changes, office expansions. These are buying signals. By the time your team manually discovers them, a competitor already booked the meeting.",
+      "You pay whether they're building or coasting. And when you leave, you start over. With a project, you pay once and own the system forever. No dependency.",
   },
   {
-    icon: TrendingUp,
-    title: "Real personalization takes 15 minutes per prospect. You have 500 prospects.",
+    icon: Clock,
+    title: "Your SDRs spend 15 minutes researching each prospect.",
     description:
-      "Your SDRs choose between sending 50 personalized emails or 500 generic ones. Clay makes it so they don't have to choose. Every prospect gets researched in seconds.",
+      "That's 125 hours a month of research for 500 prospects. An enrichment waterfall does it in seconds. A signal detection workflow catches buying intent your team will never see manually.",
   },
 ];
 
-// ── Solution ──
+// ── Pricing ──
 
-export const SOLUTION = {
-  title: "Signals-based outreach changes everything.",
-  subtitle:
-    "We build Clay-powered systems that monitor buying signals across 150+ data providers, enrich every prospect with the context that matters, and trigger personalized sequences at exactly the right moment. Your pipeline fills while your team focuses on closing.",
-  differentiator:
-    "Clay + n8n + AI personalization. Built for your ICP, not a generic template.",
-} as const;
-
-// ── Services ──
-
-export interface ServiceCard {
-  icon: LucideIcon;
+export interface PricingCard {
   title: string;
+  price: string;
   description: string;
-  visualId: "workflows" | "integrations" | "intelligence";
+  delivery: string;
 }
 
-export const SERVICES: ServiceCard[] = [
+export interface OngoingPlan {
+  title: string;
+  price: string;
+  description: string;
+}
+
+export const PRICING = {
+  headline: "Pick what you need. Get it built.",
+  subheadline: "Fixed scope. Fixed price. Delivered in days. You own everything.",
+} as const;
+
+export const PRICING_TIER_1_LABEL = "Data Layer";
+export const PRICING_TIER_1: PricingCard[] = [
   {
-    icon: Database,
-    title: "Clay Workflow Automation",
+    title: "ICP Enrichment Build",
+    price: "$750",
     description:
-      "Signal monitoring, enrichment waterfalls, and lead scoring tables built in Clay. We connect 150+ data providers and route qualified prospects directly into your sequences.",
-    visualId: "workflows",
+      "4-provider enrichment waterfall with dedup and dual email verification. You provide the list, we return it enriched with verified emails.",
+    delivery: "Delivered in 3 days",
   },
   {
-    icon: Radar,
-    title: "GTM Data Infrastructure",
+    title: "Signal Detection Setup",
+    price: "$1,500",
     description:
-      "ICP definition, CRM enrichment, and account scoring pipelines. Clean data in, qualified leads out. We integrate Clay with HubSpot, Salesforce, and your existing stack.",
-    visualId: "integrations",
+      "n8n workflow monitoring 3 buying signals (hiring, funding, job changes) for your ICP. Alerts pushed to Slack or your CRM.",
+    delivery: "Delivered in 5 days",
   },
   {
-    icon: Mail,
-    title: "Outbound Campaign Design",
+    title: "Full Data Stack",
+    price: "$2,000",
     description:
-      "Signals-based campaigns that pair the right trigger with the right message. Funding rounds, job changes, hiring surges, tech stack shifts. Each signal gets its own playbook.",
-    visualId: "intelligence",
+      "Enrichment + signal detection + lead scoring. Ready to feed into any sequencer.",
+    delivery: "Delivered in 7 days",
+  },
+];
+
+export const PRICING_TIER_2_LABEL = "Campaign Infrastructure";
+export const PRICING_TIER_2: PricingCard[] = [
+  {
+    title: "Outbound Campaign Build",
+    price: "$2,000",
+    description:
+      "500 enriched prospects, 4-touch LinkedIn sequence, 3-email sequence. Loaded into HeyReach + Smartlead. Ready to launch.",
+    delivery: "Delivered in 7 days",
+  },
+  {
+    title: "Website Intelligence Pipeline",
+    price: "$2,500",
+    description:
+      "AI scrapes prospect websites, extracts positioning, and generates personalized first messages. Plugs into your existing sequencer.",
+    delivery: "Delivered in 5 days",
+  },
+  {
+    title: "Full GTM Stack Build",
+    price: "$4,000",
+    description:
+      "Data layer + campaign infrastructure + CRM integration. The complete outbound machine.",
+    delivery: "Delivered in 10 days",
+  },
+];
+
+export const ONGOING_PLANS: OngoingPlan[] = [
+  {
+    title: "Signal Monitoring",
+    price: "$750/mo",
+    description: "We maintain your workflows and tune scoring.",
+  },
+  {
+    title: "List Refresh",
+    price: "$1,000/mo",
+    description: "500 new enriched prospects delivered monthly.",
+  },
+  {
+    title: "Fractional GTM Engineer",
+    price: "$2,500/mo",
+    description: "10 hours/month. Slack access. Use as-needed.",
   },
 ];
 
@@ -163,27 +206,27 @@ export interface Step {
 export const STEPS: Step[] = [
   {
     number: 1,
-    title: "Discovery",
+    title: "Pick a Project",
     description:
-      "We audit your current GTM stack, define your ICP with precision, and identify which buying signals map to your highest-converting opportunities.",
+      "Browse the menu. Choose the system you need built. Not sure? Book a 30-minute call and we'll figure it out together.",
   },
   {
     number: 2,
-    title: "Build",
+    title: "Kickoff (Day 1)",
     description:
-      "We configure Clay tables, set up signal detection across funding, hiring, job changes, and tech adoption. Enrichment waterfalls and scoring logic go live in your workspace.",
+      "You answer a few questions about your ICP, tools, and goals. We start building the same day. No multi-week discovery phase.",
   },
   {
     number: 3,
-    title: "Launch",
+    title: "Build (Days 2-7)",
     description:
-      "Campaigns connect to your email platform and CRM. Signals trigger personalized sequences automatically. First outbound hits inboxes within days of kickoff.",
+      "We configure enrichment waterfalls, signal detection, campaign copy, and CRM integrations. You get progress updates in Slack. No surprises.",
   },
   {
     number: 4,
-    title: "Optimize",
+    title: "Handoff",
     description:
-      "We tune signal thresholds, A/B test messaging, expand to new ICPs, and continuously improve reply rates. Monthly performance reviews keep your pipeline growing.",
+      "You own the system. We walk you through how it works, hand over all credentials and documentation. If something breaks in the first 14 days, we fix it free.",
   },
 ];
 
@@ -215,7 +258,7 @@ export const CASE_STUDY: CaseStudy = {
   signal: "Funding round detection + personalized outreach",
   before: "0.8% reply rate, 2 meetings/month from outbound",
   after: "4.7% reply rate, 14 meetings/month",
-  timeline: "Live in 10 days",
+  timeline: "System built in 10 days",
 };
 
 // ── About ──
@@ -229,10 +272,7 @@ export interface TeamMember {
 }
 
 export const ABOUT = {
-  overline: "Who We Are",
-  title: "Built by operators, not consultants.",
-  subtitle:
-    "Agentic was founded to solve a problem we lived firsthand: outbound that wastes time instead of creating pipeline.",
+  title: "Built by Erik Hernal",
 } as const;
 
 export const TEAM: TeamMember[] = [
@@ -240,7 +280,7 @@ export const TEAM: TeamMember[] = [
     name: "Erik Hernal",
     role: "Founder",
     initials: "EH",
-    bio: "Built outbound systems for 40+ B2B companies across 47 industries. I don't run your campaigns. I build the infrastructure that makes your team's outreach 4x more effective.",
+    bio: "I've built outbound systems for 40+ B2B companies across 47 industries. 10,000+ campaigns. The systems I sell are the same ones I run in production every day.\n\nI'm not a workflow builder who watched a Clay tutorial. I've been in the trenches of B2B outbound for years. Every project I deliver is battle-tested.",
     linkedIn: "https://www.linkedin.com/in/erikhernal/",
   },
 ];
@@ -301,63 +341,48 @@ export interface FAQItem {
 
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    question: "What is Clay and why do I need an agency?",
-    answer:
-      "Clay is a data enrichment and outbound automation platform that connects 150+ data providers. It is powerful but complex. Most teams spend months learning it and still underutilize its capabilities. We configure everything: signal detection, enrichment waterfalls, scoring logic, and CRM integrations. You get a production-ready system without the learning curve.",
-  },
-  {
-    question: "What buying signals can you monitor?",
-    answer:
-      "Funding rounds, job changes, new hires, tech stack adoption, leadership changes, company growth metrics, LinkedIn engagement, website visits, and more. We design signal strategies based on your ICP, so you only get alerts for prospects who match your ideal buyer profile.",
-  },
-  {
-    question: "How long does it take to launch a campaign?",
-    answer:
-      "Most campaigns go live within 5-10 business days. That includes ICP definition, Clay table setup, signal configuration, enrichment workflows, sequence copy, and CRM integration. We scope everything upfront so there are no surprises.",
-  },
-  {
-    question: "Do you work with our existing CRM and email tools?",
-    answer:
-      "Yes. We integrate with HubSpot, Salesforce, Outreach, Salesloft, Smartlead, Instantly, Apollo, and most major GTM platforms. If your tool has an API, we connect it to your Clay workflows.",
-  },
-  {
     question: "What does pricing look like?",
     answer:
-      "Signal campaign builds start at $3,000. Monthly management starts at $1,500/month. Most clients run 2-3 campaigns at $4,000-6,000/month. No long-term contracts. Every engagement starts with a free 30-minute scoping call where we map your highest-impact signal opportunity.",
+      "Projects range from $750 to $4,000 depending on scope. Everything is fixed-price, no hourly billing. You know exactly what you're paying before we start. Ongoing support starts at $750/month, month-to-month.",
   },
   {
-    question: "How is this different from hiring another SDR?",
+    question: "How is this different from hiring a GTM engineer?",
     answer:
-      "An SDR costs $60-80K per year and manually researches 30-50 prospects per day. A Clay-powered signal system monitors thousands of accounts continuously, enriches every match automatically, and triggers personalized outreach around the clock. You get 10x the volume at a fraction of the cost, and your SDRs focus on conversations instead of data entry.",
+      "A full-time GTM engineer costs $135K/year and takes 3 months to ramp. A project with us costs $750-4,000 and is delivered in 3-10 days. You get the specific system built without the commitment of a hire.",
   },
   {
-    question: "Do we need our own Clay account?",
+    question: "How is this different from a Clay agency?",
     answer:
-      "Yes. We build everything inside your Clay workspace so you own all the data, workflows, and enrichment credits. If you don't have a Clay account yet, we help you pick the right plan and get set up during onboarding.",
+      "Most Clay agencies charge $4-8K/month with 3-month minimums. We charge once per project. You own the system. No dependency, no lock-in.",
   },
   {
-    question: "What results should we expect in the first 30 days?",
+    question: "What tools do you work with?",
     answer:
-      "Most clients see their first signal-triggered meetings within 2 weeks of launch. By day 30, expect a 2-4x improvement in reply rates compared to your previous cold outbound, plus a steady stream of prospects entering your pipeline from live signal monitoring.",
+      "Clay, n8n, HubSpot, Salesforce, HeyReach, Smartlead, Instantly, LeadMagic, Findymail, Firecrawl, and Claude AI. If you use it for outbound, we probably integrate with it.",
   },
   {
-    question: "Can you work alongside our existing sales team?",
+    question: "What if I need changes after delivery?",
     answer:
-      "Absolutely. We build the signal detection and enrichment layer. Your SDRs handle the conversations and closing. The system slots into your current CRM and sequencing tools so there is no disruption to existing workflows.",
+      "Every project includes 14 days of free bug fixes after handoff. If you want ongoing optimization, our monthly plans start at $750/month.",
   },
   {
-    question: "What happens if we want to pause or cancel?",
+    question: "Do I need my own Clay account?",
     answer:
-      "Project-based builds are yours to keep forever. For retainer clients, you can pause or cancel with 30 days notice. All Clay tables, workflows, and documentation stay in your workspace. There are no lock-ins or penalties.",
+      "Depends on the project. For enrichment and signal detection, yes. We build inside your workspace so you own everything. For campaign builds, we can use our infrastructure or yours.",
+  },
+  {
+    question: "What results should I expect?",
+    answer:
+      "That depends on your ICP, your offer, and your market. What we guarantee: the system will be built correctly, the data will be clean, and the infrastructure will work. We don't guarantee specific reply rates because too many variables are outside our control. But our average client sees a 4x lift in reply rates after implementing signal-based outbound.",
   },
 ];
 
 // ── Final CTA ──
 
 export const FINAL_CTA = {
-  headline: "Your competitors are already using signals.",
-  subheadline:
-    "Book a 30-minute call and we'll map your highest-value signal campaign, free.",
-  cta: "Book a Demo",
-  note: "No commitment required. No sales deck. Just a technical conversation about your pipeline.",
+  headline: "Your outbound infrastructure shouldn't take 3 months to build.",
+  subheadline: "Pick a project. We'll have it live in days.",
+  primaryCta: "See the Menu",
+  primaryCtaHref: "#pricing",
+  secondaryCta: "Book a Call",
 } as const;

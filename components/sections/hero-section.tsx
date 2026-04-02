@@ -101,14 +101,13 @@ export function HeroSection() {
             {...(!reducedMotion && { variants: itemVariants })}
           >
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <CTAButton variant="primary" size="lg" href={SITE_CONFIG.calLink} className="w-full sm:w-auto">
+              <CTAButton variant="primary" size="lg" href={HERO.primaryCtaHref} external={false} className="w-full sm:w-auto">
                 {HERO.primaryCta}
               </CTAButton>
               <CTAButton
                 variant="secondary"
                 size="lg"
-                href={HERO.secondaryCtaHref}
-                external={false}
+                href={SITE_CONFIG.calLink}
                 className="w-full sm:w-auto"
               >
                 {HERO.secondaryCta}

@@ -22,7 +22,7 @@ export function MobileStickyCTA() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Book a Demo
+          Book a Call
         </a>
       </Button>
     </div>

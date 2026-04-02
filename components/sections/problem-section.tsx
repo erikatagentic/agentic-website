@@ -12,7 +12,7 @@ export function ProblemSection() {
       <SectionHeading
         id="problem-heading"
         overline="The Problem"
-        title="Your outbound is broken."
+        title="You're overpaying for outbound infrastructure."
       />
 
       <StaggerGrid className="grid gap-6 md:gap-8 md:grid-cols-3">

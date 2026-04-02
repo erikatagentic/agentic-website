@@ -18,9 +18,17 @@ export function ResultsSection() {
         />
 
         <MotionWrapper>
-          <div className="relative flex flex-wrap justify-center gap-8 sm:gap-16">
-            <AnimatedCounter target={4} suffix="x" label="Avg. Reply Rate Lift" />
-            <AnimatedCounter target={12} label="Days to First Meetings" />
+          <div className="relative grid grid-cols-3 gap-4 sm:gap-8 text-center">
+            <AnimatedCounter target={10000} suffix="+" label="Campaigns of data powering every build" />
+            <AnimatedCounter target={4} suffix="x" label="Average reply rate lift" />
+            <div>
+              <p className="font-display text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-6xl">
+                3-10
+              </p>
+              <p className="mt-2 text-sm text-foreground-muted">
+                Days from kickoff to live system
+              </p>
+            </div>
           </div>
         </MotionWrapper>
       </div>

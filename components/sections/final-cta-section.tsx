@@ -31,14 +31,14 @@ export function FinalCTASection() {
           <p className="mt-4 text-lg leading-relaxed text-foreground-muted md:text-xl">
             {FINAL_CTA.subheadline}
           </p>
-          <div className="mt-8">
-            <CTAButton variant="primary" size="lg" href={SITE_CONFIG.calLink}>
-              {FINAL_CTA.cta}
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <CTAButton variant="primary" size="lg" href={FINAL_CTA.primaryCtaHref} external={false}>
+              {FINAL_CTA.primaryCta}
+            </CTAButton>
+            <CTAButton variant="secondary" size="lg" href={SITE_CONFIG.calLink}>
+              {FINAL_CTA.secondaryCta}
             </CTAButton>
           </div>
-          <p className="mt-4 text-sm text-foreground-subtle">
-            {FINAL_CTA.note}
-          </p>
         </MotionWrapper>
       </div>
     </section>

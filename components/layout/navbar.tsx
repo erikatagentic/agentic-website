@@ -100,7 +100,7 @@ export function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Book a Demo
+                Book a Call
               </a>
             </Button>
             <MobileNav />

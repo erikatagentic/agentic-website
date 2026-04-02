@@ -1,8 +1,7 @@
 import { HeroSection } from "@/components/sections/hero-section";
 import { SocialProofBar } from "@/components/sections/social-proof-bar";
 import { ProblemSection } from "@/components/sections/problem-section";
-import { SolutionSection } from "@/components/sections/solution-section";
-import { ServicesSection } from "@/components/sections/services-section";
+import { PricingSection } from "@/components/sections/pricing-section";
 import { HowItWorksSection } from "@/components/sections/how-it-works-section";
 import { ResultsSection } from "@/components/sections/results-section";
 import { SocialProofSection } from "@/components/sections/social-proof-section";
@@ -19,8 +18,7 @@ export default function Home() {
         <HeroSection />
         <SocialProofBar />
         <ProblemSection />
-        <SolutionSection />
-        <ServicesSection />
+        <PricingSection />
         <HowItWorksSection />
         <ResultsSection />
         <SocialProofSection />
