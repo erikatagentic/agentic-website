@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { SectionWrapper } from "@/components/layout/section-wrapper";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
@@ -11,12 +12,14 @@ export function AboutSection() {
       <MotionWrapper>
         <div className="mx-auto max-w-2xl">
           <div className="flex flex-col items-center gap-6 sm:flex-row sm:items-start">
-            {/* Initials avatar */}
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-primary-muted">
-              <span className="font-display text-2xl font-normal text-primary">
-                {member.initials}
-              </span>
-            </div>
+            {/* Headshot */}
+            <Image
+              src="/erik-headshot.jpg"
+              alt={`${member.name} headshot`}
+              width={80}
+              height={80}
+              className="h-20 w-20 shrink-0 rounded-full object-cover"
+            />
 
             <div>
               <h2
