@@ -133,11 +133,12 @@ export interface OngoingPlan {
 }
 
 export const PRICING = {
+  overline: "The Menu",
   headline: "Pick what you need. Get it built.",
   subheadline: "Fixed scope. Fixed price. Delivered in days. You own everything.",
 } as const;
 
-export const PRICING_TIER_1_LABEL = "Data Layer";
+export const PRICING_TIER_1_LABEL = "Starters";
 export const PRICING_TIER_1: PricingCard[] = [
   {
     title: "ICP Enrichment Build",
@@ -162,7 +163,7 @@ export const PRICING_TIER_1: PricingCard[] = [
   },
 ];
 
-export const PRICING_TIER_2_LABEL = "Campaign Infrastructure";
+export const PRICING_TIER_2_LABEL = "Mains";
 export const PRICING_TIER_2: PricingCard[] = [
   {
     title: "Outbound Campaign Build",
@@ -187,6 +188,8 @@ export const PRICING_TIER_2: PricingCard[] = [
     featured: true,
   },
 ];
+
+export const ONGOING_LABEL = "The Regular's Table";
 
 export const ONGOING_PLANS: OngoingPlan[] = [
   {

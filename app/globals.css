@@ -192,6 +192,14 @@
   animation: blob-drift 12s ease-in-out infinite;
 }
 
+.menu-leader {
+  flex: 1;
+  border-bottom: 1px dotted var(--border);
+  margin-inline: 0.75rem;
+  align-self: end;
+  margin-bottom: 0.35rem;
+}
+
 .card-hover-glow {
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
