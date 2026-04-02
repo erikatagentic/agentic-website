@@ -109,11 +109,21 @@ export const PAIN_POINTS: PainPoint[] = [
 
 // ── Pricing ──
 
+// ── Tool Logos ──
+
+export const TOOL_LOGOS: string[] = [
+  "Clay", "HubSpot", "Salesforce", "Smartlead",
+  "HeyReach", "n8n", "Firecrawl", "Instantly",
+];
+
+// ── Pricing ──
+
 export interface PricingCard {
   title: string;
   price: string;
   description: string;
   delivery: string;
+  featured?: boolean;
 }
 
 export interface OngoingPlan {
@@ -174,6 +184,7 @@ export const PRICING_TIER_2: PricingCard[] = [
     description:
       "Data layer + campaign infrastructure + CRM integration. The complete outbound machine.",
     delivery: "Delivered in 10 days",
+    featured: true,
   },
 ];
 
@@ -253,13 +264,25 @@ export interface CaseStudy {
   timeline: string;
 }
 
-export const CASE_STUDY: CaseStudy = {
-  vertical: "B2B SaaS Company, 80 employees",
-  signal: "Funding round detection + personalized outreach",
-  before: "0.8% reply rate, 2 meetings/month from outbound",
-  after: "4.7% reply rate, 14 meetings/month",
-  timeline: "System built in 10 days",
-};
+export const CASE_STUDIES: CaseStudy[] = [
+  {
+    vertical: "B2B SaaS Company, 80 employees",
+    signal: "Funding round detection + personalized outreach",
+    before: "0.8% reply rate, 2 meetings/month from outbound",
+    after: "4.7% reply rate, 14 meetings/month",
+    timeline: "System built in 10 days",
+  },
+  {
+    vertical: "Equipment Management SaaS, 15 employees",
+    signal: "Hiring signals + multi-channel LinkedIn outreach",
+    before: "Tried cold email, cold calling, and paid ads. Nothing stuck.",
+    after: "36% reply rate, consistent meetings with decision-makers weekly",
+    timeline: "System built in 7 days",
+  },
+];
+
+// Deprecated: use CASE_STUDIES instead
+export const CASE_STUDY = CASE_STUDIES[0];
 
 // ── About ──
 
@@ -375,6 +398,22 @@ export const FAQ_ITEMS: FAQItem[] = [
     answer:
       "That depends on your ICP, your offer, and your market. What we guarantee: the system will be built correctly, the data will be clean, and the infrastructure will work. We don't guarantee specific reply rates because too many variables are outside our control. But our average client sees a 4x lift in reply rates after implementing signal-based outbound.",
   },
+];
+
+// ── Comparison Table ──
+
+export interface ComparisonRow {
+  label: string;
+  hire: string;
+  agency: string;
+  agentic: string;
+}
+
+export const COMPARISON_TABLE: ComparisonRow[] = [
+  { label: "Cost", hire: "$135K/year + benefits", agency: "$4-8K/month", agentic: "$750-4,000 one-time" },
+  { label: "Timeline", hire: "3 months to ramp", agency: "2-4 weeks", agentic: "3-10 days" },
+  { label: "You own it", hire: "If they stay", agency: "Starts over when you leave", agentic: "Yours forever" },
+  { label: "Lock-in", hire: "Full-time commitment", agency: "3-month minimums typical", agentic: "None. Pay once." },
 ];
 
 // ── Final CTA ──

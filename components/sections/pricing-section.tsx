@@ -5,6 +5,7 @@ import { HoverCard } from "@/components/shared/hover-card";
 import { CTAButton } from "@/components/shared/cta-button";
 import { StaggerGrid, StaggerItem } from "@/components/shared/stagger-grid";
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
+import { cn } from "@/lib/utils";
 import {
   PRICING,
   PRICING_TIER_1,
@@ -19,7 +20,17 @@ import type { PricingCard as PricingCardType } from "@/lib/constants";
 function PricingCard({ card }: { card: PricingCardType }) {
   return (
     <HoverCard className="h-full">
-      <div className="card-hover-glow flex h-full flex-col rounded-xl border border-border bg-background p-6 md:p-8">
+      <div className={cn(
+        "card-hover-glow flex h-full flex-col rounded-xl border bg-background p-6 md:p-8",
+        card.featured
+          ? "border-primary shadow-[0_0_30px_hsl(255_92%_76%/0.15)]"
+          : "border-border"
+      )}>
+        {card.featured && (
+          <Badge className="mb-3 w-fit bg-primary-cta px-3 py-1 text-xs text-white">
+            Most Popular
+          </Badge>
+        )}
         <h3 className="text-lg font-semibold leading-snug">{card.title}</h3>
         <p className="mt-3 font-display text-4xl font-normal tracking-tight md:text-5xl">
           {card.price}
@@ -59,7 +70,7 @@ export function PricingSection() {
           {PRICING_TIER_1_LABEL}
         </p>
       </MotionWrapper>
-      <StaggerGrid className="mb-16 grid gap-6 md:grid-cols-3">
+      <StaggerGrid className="mb-10 grid gap-6 md:grid-cols-3">
         {PRICING_TIER_1.map((card) => (
           <StaggerItem key={card.title} className="h-full">
             <PricingCard card={card} />
@@ -73,7 +84,7 @@ export function PricingSection() {
           {PRICING_TIER_2_LABEL}
         </p>
       </MotionWrapper>
-      <StaggerGrid className="mb-16 grid gap-6 md:grid-cols-3">
+      <StaggerGrid className="mb-10 grid gap-6 md:grid-cols-3">
         {PRICING_TIER_2.map((card) => (
           <StaggerItem key={card.title} className="h-full">
             <PricingCard card={card} />

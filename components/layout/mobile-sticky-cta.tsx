@@ -1,7 +1,7 @@
 "use client";
 
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useHeroVisibility } from "@/hooks/use-hero-visibility";
 
@@ -17,13 +17,9 @@ export function MobileStickyCTA() {
       )}
     >
       <Button asChild className="h-12 w-full hover:bg-primary-cta-hover">
-        <a
-          href={SITE_CONFIG.calLink}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Book a Call
-        </a>
+        <Link href="#pricing">
+          See the Menu
+        </Link>
       </Button>
     </div>
   );
