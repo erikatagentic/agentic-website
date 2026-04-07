@@ -16,20 +16,24 @@ const receiptLines = [
 ];
 
 const lineVariants = {
-  hidden: { opacity: 0, y: 8 },
+  hidden: { opacity: 0, y: 12 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.3, ease: easeOutQuadMutable },
+    transition: { duration: 0.35, ease: easeOutQuadMutable },
   },
 };
 
 const containerVariants = {
-  hidden: {},
+  hidden: { opacity: 0, y: 30 },
   visible: {
+    opacity: 1,
+    y: 0,
     transition: {
-      staggerChildren: 0.12,
-      delayChildren: 0.2,
+      duration: 0.5,
+      ease: easeOutQuadMutable,
+      staggerChildren: 0.15,
+      delayChildren: 0.3,
     },
   },
 };
