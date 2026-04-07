@@ -1,14 +1,19 @@
 import { MotionWrapper } from "@/components/shared/motion-wrapper";
 
-const TOOLS = [
-  { name: "Clay", wordmark: "Clay" },
-  { name: "HubSpot", wordmark: "HubSpot" },
-  { name: "Salesforce", wordmark: "Salesforce" },
-  { name: "Smartlead", wordmark: "Smartlead" },
-  { name: "HeyReach", wordmark: "HeyReach" },
-  { name: "n8n", wordmark: "n8n" },
-  { name: "Firecrawl", wordmark: "Firecrawl" },
-  { name: "Instantly", wordmark: "Instantly" },
+interface ToolLogo {
+  name: string;
+  className: string;
+}
+
+const TOOLS: ToolLogo[] = [
+  { name: "Clay", className: "text-lg font-bold tracking-tight" },
+  { name: "HubSpot", className: "text-base font-bold tracking-tight" },
+  { name: "Salesforce", className: "text-base font-bold tracking-tight" },
+  { name: "Smartlead", className: "text-sm font-semibold tracking-wide" },
+  { name: "HeyReach", className: "text-sm font-bold tracking-tight" },
+  { name: "n8n", className: "text-lg font-black tracking-tighter font-mono" },
+  { name: "Firecrawl", className: "text-sm font-bold tracking-tight" },
+  { name: "Instantly", className: "text-base font-bold tracking-tight" },
 ];
 
 export function ToolLogosBar() {
@@ -19,13 +24,13 @@ export function ToolLogosBar() {
           <p className="mb-6 text-center text-[10px] font-medium uppercase tracking-[0.2em] text-foreground-subtle">
             Integrated with your stack
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 md:gap-x-10">
             {TOOLS.map((tool) => (
               <span
                 key={tool.name}
-                className="text-sm font-semibold tracking-wide text-foreground-subtle/60 transition-colors hover:text-foreground-muted md:text-base"
+                className={`${tool.className} text-foreground-subtle/40 transition-all duration-300 hover:text-foreground-muted`}
               >
-                {tool.wordmark}
+                {tool.name}
               </span>
             ))}
           </div>
