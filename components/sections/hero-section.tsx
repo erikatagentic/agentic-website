@@ -39,7 +39,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[90vh] items-center overflow-hidden pt-16"
+      className="relative flex min-h-screen items-center overflow-hidden pt-16"
     >
       {/* Vanta.js NET background */}
       <VantaNetBg className="absolute inset-0 opacity-30" />
@@ -79,7 +79,7 @@ export function HeroSection() {
             <Item
               {...(!reducedMotion && { variants: itemVariants })}
             >
-              <h1 className="font-display text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+              <h1 className="font-display text-5xl font-normal leading-[0.95] tracking-[-0.02em] sm:text-6xl md:text-7xl lg:text-[96px]">
                 {HERO.headlineParts.map((part, i) =>
                   part.italic ? (
                     <span key={i} className="relative inline-block text-primary-text">

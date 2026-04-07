@@ -65,7 +65,7 @@ function OngoingItem({ item }: { item: OngoingPlan }) {
 
 export function PricingSection() {
   return (
-    <SectionWrapper id="pricing" variant="surface-raised">
+    <SectionWrapper id="pricing" variant="surface-raised" size="breathing">
       <SectionHeading
         id="pricing-heading"
         overline={PRICING.overline}

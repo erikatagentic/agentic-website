@@ -5,6 +5,7 @@ interface SectionWrapperProps {
   className?: string;
   children: React.ReactNode;
   variant?: "default" | "surface" | "surface-raised" | "gradient" | "gradient-accent";
+  size?: "tight" | "default" | "breathing" | "hero";
 }
 
 export function SectionWrapper({
@@ -12,13 +13,18 @@ export function SectionWrapper({
   className,
   children,
   variant = "default",
+  size = "default",
 }: SectionWrapperProps) {
   return (
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
       className={cn(
-        "relative py-16 md:py-32",
+        "relative",
+        size === "tight" && "py-8 md:py-12",
+        size === "default" && "py-16 md:py-24",
+        size === "breathing" && "py-24 md:py-40",
+        size === "hero" && "min-h-screen flex items-center",
         variant === "surface" && "bg-surface",
         variant === "surface-raised" && "bg-surface-raised",
         variant === "gradient" &&

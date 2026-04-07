@@ -47,38 +47,33 @@ export function ReceiptCard() {
             rotateY: { type: "spring", stiffness: 200, damping: 20 },
           },
         })}
-        className="relative mx-auto w-full max-w-xs select-none will-change-transform"
+        className="relative mx-auto w-full max-w-[240px] select-none will-change-transform"
         style={{
           transformStyle: "preserve-3d",
         }}
       >
-        {/* Paper card */}
+        {/* Compact receipt teaser */}
         <div
-          className="relative bg-receipt-paper px-6 pb-10 pt-6 text-receipt-text"
+          className="bg-receipt-paper px-5 py-5 text-receipt-text"
           style={{
             boxShadow: reducedMotion
               ? "0 20px 50px rgba(0,0,0,0.5), 0 8px 20px rgba(0,0,0,0.3)"
               : `${-tilt.rotateY * 1.5}px ${tilt.rotateX * 1.5 + 20}px 50px rgba(0,0,0,0.5), ${-tilt.rotateY * 0.5}px ${tilt.rotateX * 0.5 + 8}px 20px rgba(0,0,0,0.3)`,
           }}
         >
-          {/* Header */}
-          <div className="text-center">
-            <p className="font-mono text-lg font-bold tracking-[0.15em]">
-              AGENTIC
-            </p>
-            <p className="mt-1 font-mono text-[10px] uppercase tracking-[0.1em] opacity-50">
-              AI Workflow Automation
-            </p>
-          </div>
+          {/* Mini header */}
+          <p className="mb-3 text-center font-mono text-[10px] font-bold uppercase tracking-[0.15em] opacity-60">
+            Agentic
+          </p>
 
           {/* Dashed divider */}
-          <div className="my-4 border-t border-dashed border-receipt-text/20" />
+          <div className="mb-3 border-t border-dashed border-receipt-text/20" />
 
           {/* Line items */}
-          <div className="space-y-2.5">
+          <div className="space-y-1.5">
             {receiptItems.map((item) => (
-              <div key={item.label} className="flex items-baseline justify-between font-mono text-xs">
-                <span className="uppercase tracking-wide opacity-70">
+              <div key={item.label} className="flex items-baseline justify-between font-mono text-[10px]">
+                <span className="uppercase tracking-wide opacity-60">
                   {item.label}
                 </span>
                 <span className="font-bold tabular-nums">
@@ -88,32 +83,24 @@ export function ReceiptCard() {
             ))}
           </div>
 
-          {/* Dashed divider */}
-          <div className="my-4 border-t border-dashed border-receipt-text/20" />
-
-          {/* Total */}
-          <div className="flex items-baseline justify-between font-mono text-sm font-bold">
-            <span className="uppercase tracking-wide">ROI</span>
-            <span>Immediate</span>
-          </div>
-
-          {/* Footer */}
-          <div className="mt-6 text-center">
-            <p className="font-mono text-[9px] uppercase tracking-[0.12em] opacity-40">
-              Thank you for your business
-            </p>
+          {/* Divider + ROI */}
+          <div className="mt-3 border-t border-dashed border-receipt-text/20 pt-2">
+            <div className="flex items-baseline justify-between font-mono text-xs font-bold">
+              <span className="uppercase tracking-wide">ROI</span>
+              <span>Immediate</span>
+            </div>
           </div>
         </div>
 
-        {/* Torn edge effect */}
+        {/* Torn edge */}
         <svg
-          className="absolute -bottom-3 left-0 w-full"
-          viewBox="0 0 320 16"
+          className="absolute -bottom-2 left-0 w-full"
+          viewBox="0 0 240 12"
           preserveAspectRatio="none"
           aria-hidden="true"
         >
           <path
-            d="M0,0 L0,4 L8,8 L16,4 L24,8 L32,4 L40,8 L48,4 L56,8 L64,4 L72,8 L80,4 L88,8 L96,4 L104,8 L112,4 L120,8 L128,4 L136,8 L144,4 L152,8 L160,4 L168,8 L176,4 L184,8 L192,4 L200,8 L208,4 L216,8 L224,4 L232,8 L240,4 L248,8 L256,4 L264,8 L272,4 L280,8 L288,4 L296,8 L304,4 L312,8 L320,4 L320,0 Z"
+            d="M0,0 L0,3 L6,6 L12,3 L18,6 L24,3 L30,6 L36,3 L42,6 L48,3 L54,6 L60,3 L66,6 L72,3 L78,6 L84,3 L90,6 L96,3 L102,6 L108,3 L114,6 L120,3 L126,6 L132,3 L138,6 L144,3 L150,6 L156,3 L162,6 L168,3 L174,6 L180,3 L186,6 L192,3 L198,6 L204,3 L210,6 L216,3 L222,6 L228,3 L234,6 L240,3 L240,0 Z"
             className="fill-receipt-paper"
           />
         </svg>

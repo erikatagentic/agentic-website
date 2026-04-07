@@ -3,7 +3,7 @@ import { STATS } from "@/lib/constants";
 
 export function SocialProofBar() {
   return (
-    <section id="social-proof" aria-labelledby="social-proof-heading" className="border-y border-border py-16">
+    <section id="social-proof" aria-labelledby="social-proof-heading" className="border-y border-border py-8 md:py-12">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <h2 id="social-proof-heading" className="sr-only">Key results at a glance</h2>
         <MotionWrapper>
