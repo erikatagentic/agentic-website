@@ -8,7 +8,7 @@ import { useReducedMotion } from "@/hooks/use-reduced-motion";
 interface GradientBlobProps {
   className?: string;
   size?: "sm" | "md" | "lg";
-  color?: "violet" | "indigo";
+  color?: "amber" | "gold";
   parallax?: boolean;
   parallaxSpeed?: number;
 }
@@ -25,10 +25,10 @@ function blobClasses(
     size === "sm" && "h-[300px] w-[300px]",
     size === "md" && "h-[600px] w-[600px]",
     size === "lg" && "h-[800px] w-[800px]",
-    color === "violet" &&
-      "bg-[radial-gradient(ellipse_at_center,hsl(255_92%_76%/0.12),transparent_70%)]",
-    color === "indigo" &&
-      "bg-[radial-gradient(ellipse_at_center,hsl(239_84%_67%/0.10),transparent_70%)]",
+    color === "amber" &&
+      "bg-[radial-gradient(ellipse_at_center,hsl(37_100%_75%/0.12),transparent_70%)]",
+    color === "gold" &&
+      "bg-[radial-gradient(ellipse_at_center,hsl(33_76%_72%/0.10),transparent_70%)]",
     className
   );
 }
@@ -57,7 +57,7 @@ function ParallaxBlob({
 export function GradientBlob({
   className,
   size = "md",
-  color = "violet",
+  color = "amber",
   parallax = false,
   parallaxSpeed = 0.3,
 }: GradientBlobProps) {

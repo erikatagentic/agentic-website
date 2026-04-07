@@ -29,7 +29,7 @@ export function SectionWrapper({
     >
       {variant === "gradient-accent" && (
         <div
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(255_92%_76%/0.06),transparent_70%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(37_100%_75%/0.06),transparent_70%)]"
           aria-hidden="true"
         />
       )}

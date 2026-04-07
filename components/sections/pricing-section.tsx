@@ -33,7 +33,7 @@ function MenuItem({ item }: { item: PricingCard }) {
           {item.title}
         </h3>
         <span className="menu-leader" aria-hidden="true" />
-        <span className="shrink-0 font-display text-2xl font-normal italic tracking-tight md:text-3xl">
+        <span className="shrink-0 font-display text-2xl font-normal tracking-tight md:text-3xl">
           {item.price}
         </span>
       </div>
@@ -52,7 +52,7 @@ function OngoingItem({ item }: { item: OngoingPlan }) {
           {item.title}
         </h3>
         <span className="menu-leader" aria-hidden="true" />
-        <span className="shrink-0 font-display text-xl font-normal italic tracking-tight md:text-2xl">
+        <span className="shrink-0 font-display text-xl font-normal tracking-tight md:text-2xl">
           {item.price}
         </span>
       </div>

@@ -60,7 +60,7 @@ export function Navbar() {
           "mx-3 mt-4 rounded-full border px-4 transition-all duration-300 sm:mx-auto sm:max-w-4xl sm:px-6",
           "bg-surface/80 backdrop-blur-md",
           scrolled
-            ? "border-border-hover shadow-[0_0_15px_hsl(255_92%_76%/0.1)]"
+            ? "border-border-hover shadow-[0_0_15px_hsl(37_100%_75%/0.1)]"
             : "border-border"
         )}
       >

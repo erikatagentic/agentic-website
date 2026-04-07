@@ -13,7 +13,7 @@ export function ResultsSection() {
       <div className="relative">
         <GradientBlob
           size="md"
-          color="violet"
+          color="amber"
           className="-m-8 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60"
         />
 

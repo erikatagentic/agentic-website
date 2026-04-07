@@ -5,6 +5,7 @@ import { CTAButton } from "@/components/shared/cta-button";
 import { GradientBlob } from "@/components/shared/gradient-blob";
 import { SignalFlow } from "@/components/shared/signal-flow";
 import { AnimatedUnderline } from "@/components/shared/animated-underline";
+import { ReceiptCard } from "@/components/shared/receipt-card";
 import { easeOutQuadMutable } from "@/lib/motion";
 import { HERO, SITE_CONFIG } from "@/lib/constants";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -46,75 +47,83 @@ export function HeroSection() {
       >
         <GradientBlob
           size="md"
-          color="violet"
+          color="amber"
           parallax
           className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 md:py-32 lg:px-8">
-        <Container
-          {...(!reducedMotion && {
-            variants: containerVariants,
-            initial: "hidden",
-            animate: "visible",
-          })}
-          className="mx-auto max-w-4xl text-center"
-        >
-          <Item
-            {...(!reducedMotion && { variants: itemVariants })}
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_auto] lg:gap-16">
+          {/* Left column: copy + CTAs */}
+          <Container
+            {...(!reducedMotion && {
+              variants: containerVariants,
+              initial: "hidden",
+              animate: "visible",
+            })}
+            className="max-w-2xl"
           >
-            <p className="mb-6 text-xs font-medium uppercase tracking-widest text-primary-text">
-              {SITE_CONFIG.tagline}
-            </p>
-          </Item>
+            <Item
+              {...(!reducedMotion && { variants: itemVariants })}
+            >
+              <p className="mb-6 text-xs font-medium uppercase tracking-widest text-primary-text">
+                {SITE_CONFIG.tagline}
+              </p>
+            </Item>
 
-          <Item
-            {...(!reducedMotion && { variants: itemVariants })}
-          >
-            <h1 className="font-display text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-              {HERO.headlineParts.map((part, i) =>
-                part.italic ? (
-                  <span key={i} className="relative inline-block">
-                    <em className="italic">{part.text}</em>
-                    <AnimatedUnderline
-                      className="absolute -bottom-2 left-0 w-full md:-bottom-3"
-                      delay={1}
-                    />
-                  </span>
-                ) : (
-                  <span key={i}>{part.text}</span>
-                )
-              )}
-            </h1>
-          </Item>
+            <Item
+              {...(!reducedMotion && { variants: itemVariants })}
+            >
+              <h1 className="font-display text-4xl font-normal leading-[1.1] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
+                {HERO.headlineParts.map((part, i) =>
+                  part.italic ? (
+                    <span key={i} className="relative inline-block text-primary-text">
+                      {part.text}
+                      <AnimatedUnderline
+                        className="absolute -bottom-2 left-0 w-full md:-bottom-3"
+                        delay={1}
+                      />
+                    </span>
+                  ) : (
+                    <span key={i}>{part.text}</span>
+                  )
+                )}
+              </h1>
+            </Item>
 
-          <Item
-            {...(!reducedMotion && { variants: itemVariants })}
-          >
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-foreground-muted md:text-xl">
-              {HERO.subheadline}
-            </p>
-          </Item>
+            <Item
+              {...(!reducedMotion && { variants: itemVariants })}
+            >
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-foreground-muted md:text-xl">
+                {HERO.subheadline}
+              </p>
+            </Item>
 
-          <Item
-            {...(!reducedMotion && { variants: itemVariants })}
-          >
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <CTAButton variant="primary" size="lg" href={HERO.primaryCtaHref} external={false} className="w-full sm:w-auto">
-                {HERO.primaryCta}
-              </CTAButton>
-              <CTAButton
-                variant="secondary"
-                size="lg"
-                href={SITE_CONFIG.calLink}
-                className="w-full sm:w-auto"
-              >
-                {HERO.secondaryCta}
-              </CTAButton>
-            </div>
-          </Item>
-        </Container>
+            <Item
+              {...(!reducedMotion && { variants: itemVariants })}
+            >
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+                <CTAButton variant="primary" size="lg" href={HERO.primaryCtaHref} external={false} className="w-full sm:w-auto">
+                  {HERO.primaryCta}
+                </CTAButton>
+                <CTAButton
+                  variant="secondary"
+                  size="lg"
+                  href={SITE_CONFIG.calLink}
+                  className="w-full sm:w-auto"
+                >
+                  {HERO.secondaryCta}
+                </CTAButton>
+              </div>
+            </Item>
+          </Container>
+
+          {/* Right column: floating receipt card */}
+          <div className="hidden lg:block">
+            <ReceiptCard />
+          </div>
+        </div>
 
         <SignalFlow />
       </div>

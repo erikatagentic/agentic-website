@@ -23,7 +23,7 @@ export function AnimatedUnderline({ className, delay = 0.8 }: AnimatedUnderlineP
     >
       <motion.path
         d="M2 8.5C32 2.5 62 2.5 95 6.5C128 10.5 158 10.5 191 6.5C224 2.5 254 2.5 284 8.5"
-        stroke="hsl(255 92% 76%)"
+        stroke="hsl(37 100% 75%)"
         strokeWidth="3"
         strokeLinecap="round"
         fill="none"

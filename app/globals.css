@@ -3,59 +3,63 @@
 @import "shadcn/tailwind.css";
 
 :root {
-  --radius: 0.5rem;
+  --radius: 0.25rem;
 
   /* ── Background Tiers ── */
   --background: hsl(240 6% 3.9%);
   --foreground: hsl(0 0% 98%);
-  --surface: hsl(240 5% 6.5%);
-  --surface-raised: hsl(240 5.9% 10%);
-  --surface-overlay: hsl(240 3.7% 15.9%);
+  --surface: hsl(0 0% 7.5%);
+  --surface-raised: hsl(0 0% 10.5%);
+  --surface-overlay: hsl(0 0% 12.5%);
 
   /* ── shadcn: Card / Popover ── */
-  --card: hsl(240 5% 6.5%);
+  --card: hsl(0 0% 7.5%);
   --card-foreground: hsl(0 0% 98%);
-  --popover: hsl(240 5% 6.5%);
+  --popover: hsl(0 0% 7.5%);
   --popover-foreground: hsl(0 0% 98%);
 
-  /* ── shadcn: Primary (CTA button bg — #7C3AED with white text) ── */
-  --primary: hsl(262 83% 58%);
-  --primary-foreground: hsl(0 0% 100%);
+  /* ── shadcn: Primary (CTA button bg — #f5a623 with dark text) ── */
+  --primary: hsl(37 91% 55%);
+  --primary-foreground: hsl(30 100% 13%);
 
   /* ── shadcn: Secondary ── */
-  --secondary: hsl(240 5.9% 10%);
+  --secondary: hsl(0 0% 10.5%);
   --secondary-foreground: hsl(0 0% 98%);
 
   /* ── shadcn: Muted ── */
-  --muted: hsl(240 5% 6.5%);
+  --muted: hsl(0 0% 7.5%);
   --muted-foreground: hsl(240 5% 64.9%);
 
   /* ── shadcn: Accent (hover states) ── */
-  --accent: hsl(240 5.9% 10%);
+  --accent: hsl(0 0% 10.5%);
   --accent-foreground: hsl(0 0% 98%);
 
   /* ── shadcn: Destructive ── */
   --destructive: hsl(0 91% 71%);
 
   /* ── Border / Input / Ring ── */
-  --border: hsl(240 3.7% 15.9%);
-  --border-hover: hsl(240 5.3% 26.1%);
-  --input: hsl(240 3.7% 15.9%);
-  --ring: hsl(263 70% 50.4%);
+  --border: hsl(30 15% 15%);
+  --border-hover: hsl(30 12% 22%);
+  --input: hsl(30 15% 15%);
+  --ring: hsl(37 91% 55%);
 
   /* ── Text Tiers ── */
   --foreground-muted: hsl(240 5% 64.9%);
   --foreground-subtle: hsl(240 4% 46%);
 
-  /* ── Primary Text Accent (violet — #A78BFA for text/links on dark bg) ── */
-  --primary-text: hsl(255 92% 76%);
-  --primary-text-hover: hsl(258 90% 66%);
-  --primary-cta-hover: hsl(263 70% 50%);
-  --primary-muted: hsl(255 92% 76% / 0.1);
+  /* ── Primary Text Accent (amber — #ffc880 for text/links on dark bg) ── */
+  --primary-text: hsl(37 100% 75%);
+  --primary-text-hover: hsl(37 100% 68%);
+  --primary-cta-hover: hsl(37 100% 62%);
+  --primary-muted: hsl(37 100% 75% / 0.1);
 
-  /* ── Secondary Accent (indigo) ── */
-  --secondary-accent: hsl(239 84% 67%);
-  --secondary-accent-muted: hsl(239 84% 67% / 0.1);
+  /* ── Secondary Accent (warm gold) ── */
+  --secondary-accent: hsl(33 76% 72%);
+  --secondary-accent-muted: hsl(33 76% 72% / 0.1);
+
+  /* ── Receipt Paper ── */
+  --receipt-paper: hsl(45 33% 96%);
+  --receipt-text: hsl(80 10% 10%);
 
   /* ── Semantic ── */
   --success: hsl(160 64% 52%);
@@ -66,9 +70,9 @@
   --shadow-sm: 0 1px 2px hsl(0 0% 0% / 0.3);
   --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.4);
   --shadow-lg: 0 8px 24px hsl(0 0% 0% / 0.5);
-  --shadow-glow-sm: 0 0 15px hsl(255 92% 76% / 0.1);
-  --shadow-glow-md: 0 0 30px hsl(255 92% 76% / 0.15);
-  --shadow-glow-lg: 0 0 60px hsl(255 92% 76% / 0.2);
+  --shadow-glow-sm: 0 0 15px hsl(37 100% 75% / 0.1);
+  --shadow-glow-md: 0 0 30px hsl(37 100% 75% / 0.15);
+  --shadow-glow-lg: 0 0 60px hsl(37 100% 75% / 0.2);
 }
 
 @theme inline {
@@ -113,10 +117,13 @@
   --color-success: var(--success);
   --color-warning: var(--warning);
   --color-error: var(--error);
+  --color-receipt-paper: var(--receipt-paper);
+  --color-receipt-text: var(--receipt-text);
 
   /* ── Fonts ── */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-display-serif), Georgia, "Times New Roman", serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, "Courier New", monospace;
 }
 
 @layer base {
@@ -133,6 +140,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "cv01", "cv09", "ss03";
   }
 }
 
@@ -140,10 +148,10 @@
 
 @keyframes cta-glow-pulse {
   0%, 100% {
-    box-shadow: 0 0 15px hsl(255 92% 76% / 0.15), 0 0 30px hsl(255 92% 76% / 0.05);
+    box-shadow: 0 0 15px hsl(37 100% 75% / 0.15), 0 0 30px hsl(37 100% 75% / 0.05);
   }
   50% {
-    box-shadow: 0 0 20px hsl(255 92% 76% / 0.25), 0 0 40px hsl(255 92% 76% / 0.1);
+    box-shadow: 0 0 20px hsl(37 100% 75% / 0.25), 0 0 40px hsl(37 100% 75% / 0.1);
   }
 }
 
@@ -180,7 +188,7 @@
 @media (pointer: coarse) {
   .cta-glow {
     animation: none;
-    box-shadow: 0 0 15px hsl(255 92% 76% / 0.15);
+    box-shadow: 0 0 15px hsl(37 100% 75% / 0.15);
   }
 
   .animate-blob-drift {
@@ -222,9 +230,9 @@
   padding: 1px;
   background: linear-gradient(
     135deg,
-    hsl(255 92% 76% / 0),
-    hsl(255 92% 76% / 0),
-    hsl(255 92% 76% / 0)
+    hsl(37 100% 75% / 0),
+    hsl(37 100% 75% / 0),
+    hsl(37 100% 75% / 0)
   );
   -webkit-mask:
     linear-gradient(#fff 0 0) content-box,
@@ -239,9 +247,9 @@
 .gradient-border-card:focus-within::before {
   background: linear-gradient(
     135deg,
-    hsl(255 92% 76% / 0.5),
-    hsl(239 84% 67% / 0.3),
-    hsl(255 92% 76% / 0.1)
+    hsl(37 100% 75% / 0.5),
+    hsl(33 76% 72% / 0.3),
+    hsl(37 100% 75% / 0.1)
   );
 }
 
@@ -249,9 +257,9 @@
   .gradient-border-card::before {
     background: linear-gradient(
       135deg,
-      hsl(255 92% 76% / 0.2),
-      hsl(239 84% 67% / 0.1),
-      hsl(255 92% 76% / 0.05)
+      hsl(37 100% 75% / 0.2),
+      hsl(33 76% 72% / 0.1),
+      hsl(37 100% 75% / 0.05)
     );
   }
 }
@@ -261,7 +269,7 @@
 @media (prefers-reduced-motion: reduce) {
   .cta-glow {
     animation: none;
-    box-shadow: 0 0 15px hsl(255 92% 76% / 0.15);
+    box-shadow: 0 0 15px hsl(37 100% 75% / 0.15);
   }
 
   .cta-glow:hover {
@@ -271,4 +279,22 @@
   .animate-blob-drift {
     animation: none;
   }
+}
+
+/* ── Grain Texture Overlay ── */
+
+.grain {
+  position: relative;
+}
+
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 182px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1;
 }

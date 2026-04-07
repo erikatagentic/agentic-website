@@ -11,10 +11,10 @@ import {
 export const BRAND_COLORS = {
   background: "#09090B",
   backgroundAlt: "#18181B",
-  primaryText: "#A78BFA",
+  primaryText: "#ffc880",
   foreground: "#FAFAFA",
   foregroundMuted: "#A1A1AA",
-  primaryGlow: "rgba(124,58,237,0.3)",
+  primaryGlow: "rgba(245,166,35,0.3)",
 } as const;
 
 // ── Site Config ──

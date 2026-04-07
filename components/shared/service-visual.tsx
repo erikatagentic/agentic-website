@@ -74,7 +74,7 @@ function WorkflowVisual({ reducedMotion }: VisualProps) {
             key={i}
             d={d}
             fill="none"
-            stroke="hsl(255 92% 76% / 0.2)"
+            stroke="hsl(37 100% 75% / 0.2)"
             strokeWidth="0.5"
             strokeLinecap="round"
           />
@@ -163,7 +163,7 @@ function IntegrationVisual({ reducedMotion }: VisualProps) {
             y1={line.y1}
             x2={line.x2}
             y2={line.y2}
-            stroke="hsl(255 92% 76% / 0.1)"
+            stroke="hsl(37 100% 75% / 0.1)"
             strokeWidth="0.3"
           />
         ))}
@@ -250,7 +250,7 @@ function IntelligenceVisual({ reducedMotion }: VisualProps) {
                 cy="50"
                 r={r}
                 fill="none"
-                stroke={`hsl(255 92% 76% / ${opacity})`}
+                stroke={`hsl(37 100% 75% / ${opacity})`}
                 strokeWidth="0.4"
               />
             );
@@ -262,7 +262,7 @@ function IntelligenceVisual({ reducedMotion }: VisualProps) {
               cy="50"
               r={r}
               fill="none"
-              stroke={`hsl(255 92% 76% / ${opacity})`}
+              stroke={`hsl(37 100% 75% / ${opacity})`}
               strokeWidth="0.4"
               initial={{ opacity: 0, scale: 0.7 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -291,7 +291,7 @@ function IntelligenceVisual({ reducedMotion }: VisualProps) {
                 cx={cx}
                 cy={cy}
                 r="1.2"
-                fill="hsl(255 92% 76% / 0.3)"
+                fill="hsl(37 100% 75% / 0.3)"
               />
             );
           }
@@ -301,7 +301,7 @@ function IntelligenceVisual({ reducedMotion }: VisualProps) {
               cx={cx}
               cy={cy}
               r="1.2"
-              fill="hsl(255 92% 76% / 0.3)"
+              fill="hsl(37 100% 75% / 0.3)"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
@@ -312,14 +312,14 @@ function IntelligenceVisual({ reducedMotion }: VisualProps) {
 
         {/* Center dot */}
         {reducedMotion ? (
-          <circle cx="50" cy="50" r="3" fill="hsl(255 92% 76% / 0.4)" />
+          <circle cx="50" cy="50" r="3" fill="hsl(37 100% 75% / 0.4)" />
         ) : (
           <>
             <motion.circle
               cx="50"
               cy="50"
               r="3"
-              fill="hsl(255 92% 76% / 0.4)"
+              fill="hsl(37 100% 75% / 0.4)"
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -330,7 +330,7 @@ function IntelligenceVisual({ reducedMotion }: VisualProps) {
               cy="50"
               r="6"
               fill="none"
-              stroke="hsl(255 92% 76% / 0.15)"
+              stroke="hsl(37 100% 75% / 0.15)"
               strokeWidth="0.3"
               initial={{ opacity: 0, scale: 0.5 }}
               whileInView={{ opacity: [0, 0.8, 0], scale: [0.5, 1.5, 2] }}

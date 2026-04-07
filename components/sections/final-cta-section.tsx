@@ -17,7 +17,7 @@ export function FinalCTASection() {
       />
       <GradientBlob
         size="lg"
-        color="violet"
+        color="amber"
         parallax
         parallaxSpeed={0.2}
         className="left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-60"
