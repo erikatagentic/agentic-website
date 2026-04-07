@@ -6,6 +6,7 @@ import { GradientBlob } from "@/components/shared/gradient-blob";
 import { SignalFlow } from "@/components/shared/signal-flow";
 import { AnimatedUnderline } from "@/components/shared/animated-underline";
 import { ReceiptCard } from "@/components/shared/receipt-card";
+import { VantaNetBg } from "@/components/shared/vanta-net-bg";
 import { easeOutQuadMutable } from "@/lib/motion";
 import { HERO, SITE_CONFIG } from "@/lib/constants";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
@@ -40,6 +41,9 @@ export function HeroSection() {
       id="hero"
       className="relative flex min-h-[90vh] items-center overflow-hidden pt-16"
     >
+      {/* Vanta.js NET background */}
+      <VantaNetBg className="absolute inset-0 opacity-30" />
+
       {/* Background glow */}
       <div
         className="pointer-events-none absolute inset-0"
