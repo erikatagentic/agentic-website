@@ -166,13 +166,6 @@ export const PRICING_TIER_1: PricingCard[] = [
 export const PRICING_TIER_2_LABEL = "Mains";
 export const PRICING_TIER_2: PricingCard[] = [
   {
-    title: "Dead Pipeline Revival",
-    price: "$1,500",
-    description:
-      "We segment your dormant CRM leads, write reactivation sequences by bucket (cold, ghosted, no-showed), and load them into your sequencer. You keep the pipeline you already paid for.",
-    delivery: "Delivered in 5 days",
-  },
-  {
     title: "Outbound Campaign Build",
     price: "$2,000",
     description:
