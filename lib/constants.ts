@@ -59,7 +59,7 @@ export const HERO = {
     { text: "Built in days, not months.", italic: true },
   ] as const,
   subheadline:
-    "Fixed-scope projects that build enrichment waterfalls, signal detection, and personalized outbound systems. Pick a project, get it delivered, own the system.",
+    "Enrichment waterfalls, signal detection, and personalized outbound. Pick a project. Get it delivered. Own the system.",
   primaryCta: "See the Menu",
   primaryCtaHref: "#pricing",
   secondaryCta: "Book a Call",

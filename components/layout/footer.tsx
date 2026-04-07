@@ -6,17 +6,22 @@ import { SITE_CONFIG, NAV_ITEMS } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="border-t border-border bg-surface">
+      <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           {/* Brand */}
-          <Link
-            href="/"
-            className="flex items-center"
-            aria-label="Agentic home"
-          >
-            <LogoIcon size={32} className="text-primary" />
-          </Link>
+          <div className="flex flex-col gap-2">
+            <Link
+              href="/"
+              className="flex items-center"
+              aria-label="Agentic home"
+            >
+              <LogoIcon size={40} className="text-primary" />
+            </Link>
+            <p className="text-xs text-foreground-subtle">
+              {SITE_CONFIG.tagline}
+            </p>
+          </div>
 
           {/* Links + CTA */}
           <div className="flex flex-col items-start gap-6 md:flex-row md:items-center md:gap-8">
