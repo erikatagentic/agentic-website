@@ -161,6 +161,11 @@ export function SFSampleLead() {
                 </div>
                 <Shield className="h-5 w-5 text-success" />
               </div>
+              {SAMPLE_LEAD.hiringContext && (
+                <p className="mt-3 text-sm italic text-foreground-muted">
+                  {SAMPLE_LEAD.hiringContext}
+                </p>
+              )}
             </div>
 
             {/* Contact teaser */}

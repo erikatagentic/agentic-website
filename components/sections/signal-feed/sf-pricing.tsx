@@ -15,7 +15,7 @@ export function SFPricing() {
         title="Pick your volume. Cancel anytime."
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {PRICING_TIERS.map((tier, i) => (
           <MotionWrapper key={tier.name} delay={i * 0.1}>
             <div
@@ -28,7 +28,7 @@ export function SFPricing() {
             >
               {tier.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-semibold text-primary-foreground">
-                  Most Popular
+                  {tier.badgeLabel ?? "Most Popular"}
                 </span>
               )}
 

@@ -9,6 +9,7 @@ import {
   Check,
   X,
   Minus,
+  LayoutGrid,
   type LucideIcon,
 } from "lucide-react";
 
@@ -60,8 +61,15 @@ export const SIGNAL_LAYERS: SignalLayer[] = [
     icon: Briefcase,
     title: "Hiring Signals",
     description:
-      "Active job postings that match your service areas. If a company is hiring for IT, dev, or infrastructure roles, they might need you instead.",
+      "Active job postings that match your service areas. When a company posts a Network Engineer role, that's your window to call before they hire.",
     tag: "Real-time",
+  },
+  {
+    icon: LayoutGrid,
+    title: "Live Airtable Base",
+    description:
+      "Growth and Scale tiers get a live Airtable base with filters, views, and shareable links. Your whole team works from the same feed.",
+    tag: "Growth+",
   },
 ];
 
@@ -89,11 +97,13 @@ export const SAMPLE_LEAD = {
       security: "No WAF detected",
     },
     hiring: {
-      role: "IT Support Specialist",
-      posted: "March 14, 2026",
+      role: "Network Engineer",
+      posted: "April 1, 2026",
       source: "LinkedIn",
     },
   },
+  hiringContext:
+    "When Apex posts a Network Engineer role, that tells you they're managing infrastructure in-house. That's your outsource window.",
 } as const;
 
 // ── Who It's For ──
@@ -139,10 +149,27 @@ export interface PricingTier {
   period: string;
   leads: string;
   popular?: boolean;
+  badgeLabel?: string;
   features: string[];
 }
 
 export const PRICING_TIERS: PricingTier[] = [
+  {
+    name: "Founder's Rate",
+    price: "$297",
+    period: "/mo",
+    leads: "200 leads",
+    popular: true,
+    badgeLabel: "5 Spots Left",
+    features: [
+      "200 signal-scored leads/mo",
+      "1 ICP profile",
+      "Weekly CSV delivery",
+      "Email + phone enrichment",
+      "0-100 signal scoring",
+      "Price locked for life",
+    ],
+  },
   {
     name: "Starter",
     price: "$497",
@@ -162,7 +189,6 @@ export const PRICING_TIERS: PricingTier[] = [
     price: "$997",
     period: "/mo",
     leads: "1,500 leads",
-    popular: true,
     features: [
       "1,500 signal-scored leads/mo",
       "2 ICP profiles",
@@ -239,7 +265,7 @@ export const SF_COMPARISON: ComparisonRow[] = [
     zoominfo: { value: "$15K+/yr", icon: X },
     apollo: { value: "$5K+/yr", icon: Minus },
     generic: { value: "$200/mo", icon: Minus },
-    signalFeed: { value: "$497/mo", icon: Check },
+    signalFeed: { value: "$297/mo", icon: Check },
   },
 ];
 
@@ -259,7 +285,7 @@ export const SF_FAQ_ITEMS: SFFAQItem[] = [
   {
     question: "How accurate is the signal scoring?",
     answer:
-      "We spot-check every batch against manual verification before delivery. Website performance scores come directly from Google's API. Tech stack detection has a 94%+ accuracy rate across the tools we scan. Hiring signals are pulled from live job postings, so they reflect real-time intent.",
+      "Tech stack detection is powered by 6,000+ technology signatures -- the same database that identifies CMS, hosting, security tools, frameworks, and analytics. Website performance scores come directly from Google's PageSpeed API. Hiring signals are pulled from live job postings. We spot-check every batch before delivery.",
   },
   {
     question: "What format do I get the leads in?",
@@ -282,6 +308,35 @@ export const SF_FAQ_ITEMS: SFFAQItem[] = [
       "Month-to-month, cancel anytime. No annual contracts, no lock-in. If the first batch doesn't outperform what you're currently using, walk away. We'd rather earn your business every month than trap you into a deal.",
   },
 ];
+
+// ── After Delivery ──
+
+export const SF_AFTER_DELIVERY = {
+  overline: "After Delivery",
+  headline: "Your feed arrives. Here's what happens next.",
+  steps: [
+    {
+      step: "01",
+      title: "Import in one click",
+      body: "CSV drops into any CRM, Apollo, Instantly, or HeyReach. Headers match what your tools expect.",
+    },
+    {
+      step: "02",
+      title: "Filter by score",
+      body: "Sort by signal score. Work the 70+ companies first -- they're showing multiple buying signals, not just one.",
+    },
+    {
+      step: "03",
+      title: "Reach out with context",
+      body: 'Every lead includes the signal detail. "Apex posted a Network Engineer role on April 1." Lead with that.',
+    },
+    {
+      step: "04",
+      title: "Next feed auto-delivers",
+      body: "Weekly or 2x/week, depending on tier. You don't do anything. It just shows up.",
+    },
+  ],
+} as const;
 
 // ── Final CTA ──
 

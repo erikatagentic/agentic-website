@@ -12,7 +12,7 @@ export function SFSignalLayers() {
         title="Three signal layers. One score."
       />
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {SIGNAL_LAYERS.map((layer, i) => (
           <MotionWrapper key={layer.title} delay={i * 0.1}>
             <div className="rounded-2xl border border-border bg-surface-raised p-6 md:p-8">
