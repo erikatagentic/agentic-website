@@ -1348,6 +1348,7 @@ These apply across all of Erik's projects:
 - **Limit em dashes** — use sparingly, prefer periods or commas
 - **Concise copy** — trim wordiness, every word must earn its place
 - **Plans before execution** — present comprehensive plans before multi-step work
+- **Re-audit gate** -- before structural code changes, re-read key files and list what you verified (components, props, routes). Confidence claims without specifics = gate failure. Full rule in `~/.claude/CLAUDE.md`.
 - **No invented data** — never fabricate testimonials, stats, or client names. Use only what's in `constants.ts`
 - **Auto-update docs** — always update CLAUDE.md and MEMORY.md after making changes without being asked
 
